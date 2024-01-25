@@ -1,6 +1,6 @@
 #README.md
 HTML - Basic structural and organizational elements
-> Test
+> Test <
 CSS - Styling and animating
 JavaScript - Interactivity (e.g. What happens when a user presses a button)
 Web service - Remote functions that your application calls on your, and someone else's, web server (e.g. saveScores, getWeather, chatWithFriend)
