@@ -1,6 +1,6 @@
 # README.md
 
-![The rough layout for the CalPal site.](../Resources/Images/IMG_8972.png)
+![The rough layout for the CalPal site.](Resources/Images/IMG_8972.png)
 
 
 ## Elevator Pitch/ Key Features and descriptions
