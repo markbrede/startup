@@ -2,7 +2,7 @@
 
 ## Elevator Pitch/ Key Features and discriptions
 
-HTML:
+**HTML:
 
 
 CSS:
@@ -25,7 +25,7 @@ Database data:
 
 
 
-WebSocket data:  
+WebSocket data:  **
 
 
 
