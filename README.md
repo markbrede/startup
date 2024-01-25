@@ -3,7 +3,7 @@
 ## Elevator Pitch/ Key Features and descriptions
 ***Elevator Pitch***
 
-
+Fitness apps are booming as high numbers of people are concerned about their physical health. I'd like to introduce you to my app called CalPal, the revolutionary website reshaping how we approach health and wellness! CalPal empowers users to effortlessly track their caloric intake, offering a seamless experience with the ability to save favorite foods for quick entry. What sets us apart? Meet your virtual companions, "Palories" – adorable pets that users earn by consistently achieving their calorie goals. It's not just about tracking calories; it's about building a healthier lifestyle with the support of your virtual buddies. People will be excited to join the CalPal community, where health meets fun!
 
 
 
