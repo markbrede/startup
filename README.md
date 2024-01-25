@@ -1,5 +1,5 @@
 #README.md
-##Elevator Pitch/ Key Features and discription
+##Elevator Pitch/ Key Features and discriptions
 HTML - Basic structural and organizational elements
 CSS - Styling and animating
 JavaScript - Interactivity (e.g. What happens when a user presses a button)
