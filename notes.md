@@ -14,7 +14,7 @@ Server IP Address:
 http://54.166.215.17/
 
 Command to Server:
-ssh -i /Users/markbrede/Documents/docs/cs260/********.pem ubuntu@3.238.149.245
+ssh -i /Users/markbrede/Documents/docs/cs260/********.pem ubuntu@54.166.215.17
 
 
 
