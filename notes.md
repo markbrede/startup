@@ -32,4 +32,4 @@ drwxrwxr-x 4 ubuntu ubuntu 4096 Apr 13 16:48 services"
 
 ***HTTPS, TLS, and web certificates NOTES***
 
-domain name: autoexpensetracker.click
+domain name: autoexpensetracker.click *** https://autoexpensetracker.click/
