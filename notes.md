@@ -11,7 +11,7 @@ I have never used github before. I had no idea the level of ingenuity behind the
 **Amazon Web Services - EC2 NOTES**
 
 Server IP Address:
-http://54.166.215.17/
+http://54.166.215.17
 
 Command to Server:
 ssh -i /Users/markbrede/Documents/docs/cs260/********.pem ubuntu@54.166.215.17
