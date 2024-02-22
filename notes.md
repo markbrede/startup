@@ -165,3 +165,8 @@ For example, you can list the files in a directory, pipe it into grep to search 
 
 ls -l | grep ' Nov ' | wc -l
 
+**HTML Structure**
+Some of the common HTML structural elements include body, header, footer, main, section, aside, p, table, ol/ul, div, and span
+
+
+**HTML Input**
