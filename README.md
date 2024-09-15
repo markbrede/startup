@@ -19,9 +19,15 @@ Often the small expenses we spend on our vehicles go unaccounted for, leaving us
 
 
 
-# EC2 Instance Setup and Management
+## EC2 Instance Setup and Management
 
-## Summary
+
+
+
+
+
+
+# Summary
 
 I've set up an AWS EC2 instance for my project. Here’s a detailed overview of the steps I followed:
 
