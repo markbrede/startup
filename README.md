@@ -13,7 +13,7 @@ Often the small expenses we spend on our vehicles go unaccounted for, leaving us
 6. **Third-Party API Integration**: Use external fuel price API for accurate fuel cost tracking.
 7. **Responsive Design**: Optimized for all screen sizes with a clean interface.
 
-#Originally I thought that everything was to be included on the "Rough Sketch." Because of this I have included the "Technology Uses" on the rough sketch seen below.
+# Originally I thought that everything was to be included on the "Rough Sketch." Because of this I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
