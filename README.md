@@ -17,6 +17,7 @@ Often the small expenses we spend on our vehicles go unaccounted for, leaving us
 
 
 
+![IMG_0049](https://github.com/user-attachments/assets/17a30bf6-d135-4848-a870-41eef1967cad)
 
 
 ## EC2 Instance Setup and Management
