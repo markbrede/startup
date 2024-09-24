@@ -30,3 +30,12 @@ I have included the "Technology Uses" on the rough sketch seen below.
 **Accessed and Configured the Instance**
 **SSH into Server Using:**
    ssh -i [my key pair file] ubuntu@3.216.217.181
+
+
+
+
+## Sep 24 2024 - HTTPS
+**Secured Web Server Communication with HTTPS**
+- Modified Caddyfile:
+- Replaced `:80` with my domain name `AutoExpenseTracker.click`.
+- Restarted Caddy to apply changes:
