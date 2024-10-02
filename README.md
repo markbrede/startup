@@ -39,3 +39,10 @@ I have included the "Technology Uses" on the rough sketch seen below.
 - Modified Caddyfile:
 - Replaced `:80` with my domain name `AutoExpenseTracker.click`.
 - Restarted Caddy to apply changes:
+
+
+
+## Oct 02 2024 - HTML & CodePen
+**Completed HTML Structure, Input, and Media**
+- Familiarized myself with CodePen.
+- 
