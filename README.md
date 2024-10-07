@@ -24,3 +24,6 @@ I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
+## Oct 07 2024 - HTML Deliverable
+I added the structure (HTML) for the AutoExpenseTracker.click application
+1. **Cloned Simon HTML**: Cloned Simon HTML to my computer.
