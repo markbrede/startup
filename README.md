@@ -23,26 +23,4 @@ I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
-## Sep 17 2024 - EC2
-**I created the EC2 Instance**
-- **Named the Instance marks260webserver**
-- **Choose t2.micro for the instance type (May need to change this later**
-**Accessed and Configured the Instance**
-**SSH into Server Using:**
-   ssh -i [my key pair file] ubuntu@3.216.217.181
 
-
-
-
-## Sep 24 2024 - HTTPS
-**Secured Web Server Communication with HTTPS**
-- Modified Caddyfile:
-- Replaced `:80` with my domain name `AutoExpenseTracker.click`.
-- Restarted Caddy to apply changes:
-
-
-
-## Oct 02 2024 - HTML & CodePen
-**Completed HTML Structure, Input, and Media**
-- Familiarized myself with CodePen.
-- 
