@@ -1,14 +1,15 @@
 # startup
 
 
-## Sep 17 2024 - ELEVATOR PITCH
+
+
+
+
+# ELEVATOR PITCH
+## Sep 17 2024 - Pitch
 Often the small expenses we spend on our vehicles go unaccounted for, leaving us underestimating the true cost of owning and maintaining our vehicles. My website, AutoExpenseTracker.com, is a simple yet powerful tool for vehicle owners to track and manage their automotive expenses. By creating an account, a user can easily log their vehicle's make and model, enter expenses like fuel, insurance, and maintenance, and have everything neatly organized in one place. With real-time cost calculations such as cost per mile and total vehicle expenses, users can make informed decisions on whether to maintain their current vehicle or invest in a new one. This website is appealing to a large number of people because it allows people to take control of their vehicle costs and optimize your financial decisions.
 
-
-
-
-
-## Sep 14 2024 - KEY FEATURES OF AutoExpenseTracker.com
+## Sep 14 2024 - Key Features
 1. **User Accounts**: Sign-up and login functionality with personalized expense tracking.
 2. **Vehicle Cards**: Add and view vehicles, each with its own expense summary.
 3. **Expense Tracking**: Log expenses (fuel, insurance, maintenance) and categorize them.
@@ -24,6 +25,20 @@ I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
-## Oct 07 2024 - HTML Deliverable
-I added the structure (HTML) for the AutoExpenseTracker.click application
-1. **Cloned Simon HTML**: Cloned Simon HTML to my computer.
+# HTML Deliverable
+## Oct 07 2024 - Cloned and familiarized Simon HTML code.
+1. **Cloned Simon HTML**: Cloned Simon HTML to my computer and became familiar with HTML code and what it did.
+
+## Oct 08 2024 - Deployed Simon
+1. Tested "deploy to Production."  ./deployFiles.sh -k /Users/markbrede/documents/cs260/260-ec2-key.pem -h autoexpensetracker.click -s simon)
+2. Ensured Caddy was still working properly (activated)
+
+
+
+
+
+
+
+
+
+
