@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Expenses</title>
+    <link rel="icon" href="icon.ico" />
+</head>
+<body>
+    <header>
+        <h1>Auto Expense Tracker</h1>
+        <nav>
+            <menu>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="track.html">Track Expenses</a></li>
+                <li><a href="history.html">Expense History</a></li>
+                <li><a href="about.html">About</a></li>
+            </menu>
+        </nav>
+        <hr />
+    </header>
+
+    <main>
+        <h1>Track Your Expenses</h1>
+        <!-- Placeholder for database -->
+        <div>
+            <p>Placeholder for database content like stored vehicle data for selecting a make and model</p>
+        </div>
+        <form method="post" action="history.html">
+            <label for="vehicle">Vehicle:</label>
+            <input type="text" id="vehicle" placeholder="Make and Model"required />
+            <br />
+            <label for="expenseType">Expense Type:</label>
+            <input type="text" id="expenseType" placeholder="e.g., Fuel, Insurance" required />
+            <br />
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" placeholder="Enter amount" required />
+            <br />
+            <button type="submit">Add Expense</button>
+        </form>
+         <!-- Placeholder for Data Visualization Service -->
+        <div>
+            <p>Placeholder for data visual (prolly somthing like chart.js for expense charts)</p>
+        </div>
+    </main>
+
+    <footer>
+        <hr />
+        <span class="text-reset">Mark Brede</span>
+        <br />
+        <a href=https://github.com/markbrede/startup/tree/main>GitHub</a>
+    </footer>
+</body>
+</html>
