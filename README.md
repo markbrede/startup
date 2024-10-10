@@ -37,7 +37,10 @@ I have included the "Technology Uses" on the rough sketch seen below.
 1. As recommended by the instructions I used a similar structure to simon.html by modifying simon.html to fit autoexpensetracker
 2. Changed titles/href names.
 3. updated main with welcome message and added my github link to the footer.
-## Oct 08 2024 - Made index.HTML
+## Oct 09 2024 - Made tracker.HTML
+1. tailored the structure of play.html in order to incoperate the needed structure of functions in tracker.html
+2. added icon.ico file in order to incorperate the custome icon
+3. 
 
 
 
