@@ -45,6 +45,7 @@ I have included the "Technology Uses" on the rough sketch seen below.
 ## Oct 09 2024 - Created histor.html and about.html
 1. Added tesla picture to the about section. added <p> for the about section
 2. GitHub links in all website pages.
+3. Added placeholders for websocket, database, and other services.
 
 
 
