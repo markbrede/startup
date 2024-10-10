@@ -33,7 +33,11 @@ I have included the "Technology Uses" on the rough sketch seen below.
 1. Tested "deploy to Production."  ./deployFiles.sh -k /Users/markbrede/documents/cs260/260-ec2-key.pem -h autoexpensetracker.click -s simon)
 2. Ensured Caddy was still working properly (activated)
 
-
+## Oct 08 2024 - Made index.HTML
+1. As recommended by the instructions I used a similar structure to simon.html by modifying simon.html to fit autoexpensetracker
+2. Changed titles/href names.
+3. updated main with welcome message and added my github link to the footer.
+## Oct 08 2024 - Made index.HTML
 
 
 
