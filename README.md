@@ -1,14 +1,15 @@
 # startup
 
 
-## Sep 17 2024 - ELEVATOR PITCH
+
+
+
+
+# ELEVATOR PITCH
+## Sep 17 2024 - Pitch
 Often the small expenses we spend on our vehicles go unaccounted for, leaving us underestimating the true cost of owning and maintaining our vehicles. My website, AutoExpenseTracker.com, is a simple yet powerful tool for vehicle owners to track and manage their automotive expenses. By creating an account, a user can easily log their vehicle's make and model, enter expenses like fuel, insurance, and maintenance, and have everything neatly organized in one place. With real-time cost calculations such as cost per mile and total vehicle expenses, users can make informed decisions on whether to maintain their current vehicle or invest in a new one. This website is appealing to a large number of people because it allows people to take control of their vehicle costs and optimize your financial decisions.
 
-
-
-
-
-## Sep 14 2024 - KEY FEATURES OF AutoExpenseTracker.com
+## Sep 14 2024 - Key Features
 1. **User Accounts**: Sign-up and login functionality with personalized expense tracking.
 2. **Vehicle Cards**: Add and view vehicles, each with its own expense summary.
 3. **Expense Tracking**: Log expenses (fuel, insurance, maintenance) and categorize them.
@@ -24,6 +25,32 @@ I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
-## Oct 07 2024 - HTML Deliverable
-I added the structure (HTML) for the AutoExpenseTracker.click application
-1. **Cloned Simon HTML**: Cloned Simon HTML to my computer.
+# HTML Deliverable
+## Oct 07 2024 - Cloned and familiarized Simon HTML code.
+1. **Cloned Simon HTML**: Cloned Simon HTML to my computer and became familiar with HTML code and what it did.
+
+## Oct 08 2024 - Deployed Simon
+1. Tested "deploy to Production."  ./deployFiles.sh -k /Users/markbrede/documents/cs260/260-ec2-key.pem -h autoexpensetracker.click -s simon)
+2. Ensured Caddy was still working properly (activated)
+
+## Oct 08 2024 - Made index.HTML
+1. As recommended by the instructions I used a similar structure to simon.html by modifying simon.html to fit autoexpensetracker
+2. Changed titles/href names.
+3. updated main with welcome message and added my github link to the footer.
+
+## Oct 09 2024 - Made tracker.HTML
+1. Tailored the structure of play.html in order to incoperate the needed structure of functions in tracker.html
+2. Added icon.ico file in order to incorperate the custome icon
+
+## Oct 09 2024 - Created histor.html and about.html
+1. Added tesla picture to the about section. added <p> for the about section
+2. GitHub links in all website pages.
+3. Added placeholders for websocket, database, and other services.
+
+
+
+
+
+
+
+
