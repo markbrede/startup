@@ -42,10 +42,12 @@ I have included the "Technology Uses" on the rough sketch seen below.
 1. Tailored the structure of play.html in order to incoperate the needed structure of functions in tracker.html
 2. Added icon.ico file in order to incorperate the custome icon
 
-## Oct 09 2024 - Created histor.html and about.html
+## Oct 10 2024 - Created histor.html and about.html
 1. Added tesla picture to the about section. added <p> for the about section
 2. GitHub links in all website pages.
 3. Added placeholders for websocket, database, and other services.
+4. Pushed HTML files to github.
+5. Deployed startup to autoexpensetracker.click
 
 
 
