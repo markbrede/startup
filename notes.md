@@ -28,7 +28,7 @@
 **Completed HTML Structure, Input, and Media**
 - Familiarized myself with CodePen.
 
-## )Oct 21 2024 - CSS Practice
+## Oct 21 2024 - CSS Practice
 - **CSS Declarations**: CSS declarations consist of properties and values that define the styling of HTML elements. Common properties include `background-color`, `border`, `color`, and `font`.
   ```css
   p {
@@ -136,3 +136,50 @@
      transition-duration:.3s ease-in-out ;
    }
    ```
+
+
+
+## Oct 21 2024 - CSS Flex
+
+   - **Flexbox Layout**: Flexbox is a CSS layout model that allows you to design complex layouts with ease by distributing space within a container. It uses the `display: flex` property to activate flexbox on a container.
+  ```css
+  .container {
+    display: flex;
+  }
+  ```
+
+- **Flex Direction**: The `flex-direction` property defines the direction in which flex items are placed in the flex container. It can be set to `row`, `column`, `row-reverse`, or `column-reverse`.
+  ```css
+  .container {
+    display: flex;
+    flex-direction: column; /* Items are stacked vertically */
+  }
+  ```
+
+- **Justify Content**: The `justify-content` property aligns flex items along the main axis (horizontal by default). It can be set to values like `flex-start`, `flex-end`, `center`, `space-between`, and `space-around`.
+  ```css
+  .container {
+    display: flex;
+    justify-content: space-between; /* Evenly distributes items */
+  }
+  ```
+
+- **Align Items**: The `align-items` property aligns flex items along the cross axis (vertical by default). Possible values include `stretch`, `center`, `flex-start`, and `flex-end`.
+  ```css
+  .container {
+    display: flex;
+    align-items: center; /* Centers items vertically */
+  }
+  ```
+
+- **Flex Property**: The `flex` property is a shorthand for setting the grow, shrink, and basis of a flex item. It determines how much space an item should take relative to its siblings.
+  ```css
+  .item {
+    flex: 1; /* Item will grow to fill available space equally */
+  }
+  ```
+  
+These key points summarize the fundamental aspects of CSS Flexbox, providing a solid foundation for creating responsive and adaptable web layouts.
+
+
+## Oct 21 2024 - CSS Frameworks
