@@ -182,4 +182,109 @@
 These key points summarize the fundamental aspects of CSS Flexbox, providing a solid foundation for creating responsive and adaptable web layouts.
 
 
-## Oct 21 2024 - CSS Frameworks
+## Oct 21 2024 - JavaScript Essentials for the Mid-term
+
+# Beginner JavaScript Concepts
+
+- **Hello World Example**
+  - Display a message using JavaScript:
+    ```javascript
+    console.log("Hello World!");
+    ```
+  - Use an alert box:
+    ```html
+    <script type="text/javascript">
+      alert("Hello World");
+    </script>
+    ```
+
+- **Variables and Data Types**
+  - Declare variables using `let`, `const`, or `var`:
+    ```javascript
+    let name = "John";
+    const age = 30;
+    var isStudent = true;
+    ```
+
+- **Basic Operations**
+  - Arithmetic operations:
+    ```javascript
+    let sum = 5 + 3;
+    let product = 4 * 2;
+    ```
+
+- **Functions**
+  - Define and use a function:
+    ```javascript
+    function greet(name) {
+      return "Hello, " + name;
+    }
+    
+    console.log(greet("Alice"));
+    ```
+
+- **Control Structures**
+  - Conditional statements:
+    ```javascript
+    if (age > 18) {
+      console.log("Adult");
+    } else {
+      console.log("Minor");
+    }
+    ```
+  - Loops:
+    ```javascript
+    for (let i = 0; i < 5; i++) {
+      console.log(i);
+    }
+    
+    let j = 0;
+    while (j < 5) {
+      console.log(j);
+      j++;
+    }
+    ```
+
+- **Arrays**
+  - Create and manipulate arrays:
+    ```javascript
+    let fruits = ["Apple", "Banana", "Cherry"];
+    
+    fruits.push("Orange");
+    
+    console.log(fruits); // Banana
+    ```
+
+- **Objects**
+  - Define and use objects:
+    ```javascript
+    let person = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 25
+    };
+    
+    console.log(person.firstName); // John
+    ```
+
+- **Events**
+  - Add event listeners to elements:
+    ```html
+    <button id="myButton">Click me</button>
+    
+    <script>
+      document.getElementById("myButton").addEventListener("click", function() {
+        alert("Button clicked!");
+      });
+    </script>
+    ```
+
+- **DOM Manipulation**
+  - Change HTML content with JavaScript:
+    ```html
+    <h1 id="title">Original Title</h1>
+    
+    <script>
+      document.getElementById("title").textContent = "New Title";
+    </script>
+    ```
