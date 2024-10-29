@@ -53,6 +53,16 @@ I have included the "Technology Uses" on the rough sketch seen below.
 
 
 
+# CSS Startup
+## Oct 29 2024 - Cloned and Deployed Simon CSS
+1. Cloned Simon CSS to my computer and used the deployment script, key, and simon. domain to deploy to my production environment.
+
+## Oct 29 2024 -
+1. 
+
+
+
+
 
 
 
