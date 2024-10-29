@@ -57,8 +57,9 @@ I have included the "Technology Uses" on the rough sketch seen below.
 ## Oct 29 2024 - Cloned and Deployed Simon CSS
 1. Cloned Simon CSS to my computer and used the deployment script, key, and simon. domain to deploy to my production environment.
 
-## Oct 29 2024 -
-1. 
+## Oct 29 2024 - Completing Home Page CSS(index.html)
+1. Added a general reset (* selector) to remove default margins and padding across all elements and ensure consistent box sizing throughout the homepage. Pretty self explanitory, but I did this because it provides a clean slate for me to style it. It also ensures elements align as intended across different browsers.
+2. 
 
 
 
