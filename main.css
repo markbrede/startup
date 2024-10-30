@@ -1,30 +1,44 @@
-/* Main CSS for a dark, cool, matte black/gray aesthetic */
-
-/* General page layout */
+/* Main CSS general page layout */
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
     font-family: Arial, sans-serif;
-    color: #e0e0e0; /* Light gray text for readability */
-    background-color: #1e1e1e; /* Dark matte black background */
+    color: #e0e0e0;
+    background-color: #1e1e1e; /*background*/
     margin: 0;
   }
   
-  /* HEADER (add background image in the fututr?)*/
-  header {
+/*HEADER now with background image */
+header {
     flex: 0 80px;
     text-align: center;
-    background-color: #333333; /*applied to header */
-    padding: 15px 0;
     color: #e0e0e0;
-    border-bottom: 1px solid #444444; /*subtle border*/
+    padding: 15px 0;
+    background-image: url('car.jpeg');
+    background-size: cover; /*scale the image for header */
+    background-position: center;
+    position: relative; /*position for overlay*/
+  }
+  
+  /*darkening the header image for readability */
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /*semitransparent*/
+    z-index: 1;
   }
   
   header h1 {
+    position: relative;
     font-size: 2em;
     margin: 0;
     font-weight: 600;
+    z-index: 2; /*txt above overlay*/
   }
   
   nav menu {
@@ -33,7 +47,9 @@ body {
     list-style: none;
     padding: 10px 0;
     margin: 0;
-  }
+    position: relative;
+    z-index: 2;
+  }  
   
   nav menu li {
     margin: 0 15px;
@@ -62,9 +78,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background-color: #2b2b2b; /* Darker gray background for contrast */
+    background-color: #2b2b2b;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /*shadow*/
     max-width: 800px;
     margin: 20px auto;
   }
@@ -89,7 +105,7 @@ body {
   }
   
   tr:nth-child(even) {
-    background-color: #242424; /* Slightly lighter rows for contrast */
+    background-color: #242424;
   }
   
 
@@ -118,7 +134,7 @@ body {
   }
   
   footer a:hover {
-    color: #a0a0a0; /* Lighter gray on hover */
+    color: #a0a0a0; /*lighter gray on hover */
   }
   
   /*button styling*/
@@ -135,7 +151,7 @@ body {
   }
   
   button:hover {
-    background-color: #555555; /* Lighter gray on hover */
+    background-color: #555555;
   }
   
   /* Form input styling */
@@ -148,7 +164,7 @@ body {
     margin: 10px 0;
     border: 1px solid #444444;
     border-radius: 4px;
-    background-color: #333333; /* Dark gray input background */
+    background-color: #333333;
     color: #e0e0e0;
   }
   
