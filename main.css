@@ -1,96 +1,173 @@
-/*this main.CSS is going to be ref in each page.
-I have it style the header and the footer so that the theme is seen in the entire website*/
+/* Main CSS for a dark, cool, matte black/gray aesthetic */
 
-/*for the page layout*/
+/* General page layout */
 body {
     display: flex;
     flex-direction: column;
     min-width: 375px;
     font-family: Arial, sans-serif;
+    color: #e0e0e0; /* Light gray text for readability */
+    background-color: #1e1e1e; /* Dark matte black background */
+    margin: 0;
   }
   
-  /*the header styling*/
+  /* HEADER (add background image in the fututr?)*/
   header {
     flex: 0 80px;
     text-align: center;
-    background-color: #f8f9fa;
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd;
+    background-color: #333333; /*applied to header */
+    padding: 15px 0;
+    color: #e0e0e0;
+    border-bottom: 1px solid #444444; /*subtle border*/
   }
   
   header h1 {
-    font-size: 1.8em;
-    color: #333;
+    font-size: 2em;
     margin: 0;
+    font-weight: 600;
   }
   
   nav menu {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     list-style: none;
-    padding: 0;
+    padding: 10px 0;
+    margin: 0;
   }
   
   nav menu li {
-    margin: 0 10px;
+    margin: 0 15px;
   }
   
   nav menu li a {
     text-decoration: none;
-    color: #007bff;
+    color: #e0e0e0; /*applied to links*/
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
   }
-  
+  /*color applied we I hover*/
   nav menu li a:hover {
-    color: #0056b3; /*darker shade on hover*/
+    color: #a0a0a0; 
   }
   
-  /*main content styling*/
+
+
+
+
+  /*MAIN*/
   main {
     flex: 1;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-color: #2b2b2b; /* Darker gray background for contrast */
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    max-width: 800px;
+    margin: 20px auto;
   }
   
-  /*footer styling*/
+  /*applied to tables in main content */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /*for table borders */
+  table, th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: #3b3b3b; /*keep headers dark*/
+    color: #e0e0e0; /*I will continue to adjust this for txt readbility*/
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #242424; /* Slightly lighter rows for contrast */
+  }
+  
+
+
+
+  
+  /*FOOTER*/
   footer {
-    flex: 0 30px;
+    flex: 0 40px;
     text-align: center;
-    padding: 10px 0;
-    background-color: #f8f9fa;
-    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    background-color: #333333;
+    color: #e0e0e0;
+    border-top: 1px solid #444444;
   }
   
   footer span,
   footer a {
-    color: #333;
+    color: #e0e0e0;
   }
   
   footer a {
-    float: right;
     text-decoration: none;
-    color: #007bff;
+    margin-left: 10px;
+    transition: color 0.3s ease-in-out;
   }
   
   footer a:hover {
-    color: #0056b3;
+    color: #a0a0a0; /* Lighter gray on hover */
   }
   
-  /*active adjustments for different screen sizes*/
+  /*button styling*/
+  button {
+    background-color: #2e59b4;
+    color: #e0e0e0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #555555; /* Lighter gray on hover */
+  }
+  
+  /* Form input styling */
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #444444;
+    border-radius: 4px;
+    background-color: #333333; /* Dark gray input background */
+    color: #e0e0e0;
+  }
+  
+  input::placeholder {
+    color: #a0a0a0; /*lighter color for placeholders */
+  }
+  
+  /*active adjustments*/
   @media (max-width: 600px) {
     nav menu {
       flex-direction: column;
     }
   
     header, footer {
-      padding: 5px;
+      padding: 10px;
     }
   
     main {
-      padding: 10px;
+      padding: 15px;
     }
   }
   
