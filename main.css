@@ -1,0 +1,105 @@
+/*this main.CSS is going to be ref in each page.
+I have it style the header and the footer so that the theme is seen in the entire website*/
+
+/*for the page layout*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 375px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /*the header styling*/
+  header {
+    flex: 0 80px;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  header h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+  }
+  
+  nav menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav menu li {
+    margin: 0 10px;
+  }
+  
+  nav menu li a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  nav menu li a:hover {
+    color: #0056b3; /*darker shade on hover*/
+  }
+  
+  /*main content styling*/
+  main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /*footer styling*/
+  footer {
+    flex: 0 30px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f8f9fa;
+    border-top: 1px solid #ddd;
+  }
+  
+  footer span,
+  footer a {
+    color: #333;
+  }
+  
+  footer a {
+    float: right;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  footer a:hover {
+    color: #0056b3;
+  }
+  
+  /*active adjustments for different screen sizes*/
+  @media (max-width: 600px) {
+    nav menu {
+      flex-direction: column;
+    }
+  
+    header, footer {
+      padding: 5px;
+    }
+  
+    main {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-height: 600px) {
+    header, footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+  
