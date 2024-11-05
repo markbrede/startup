@@ -1,0 +1,106 @@
+/*my welcome text styling */
+.welcome-container {
+    display: inline-block; /*both lines are now a single block */
+    text-align: center;
+    animation: slideInFromTop 1.5s ease-out forwards;
+    opacity: 50; /*initial transparency*/
+}
+
+/*slide in animation from the top */
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/*fade animation*/
+@keyframes fadeInLeftToRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+/*FADE FROM LEFT TO RIGHT ANIMATION*/
+
+/*apply fade effect to the introductory text */
+.typing-text {
+    font-family: inherit;
+    font-size: 1em; /*match font size */
+    opacity: 0; /* as said before, initial transparency*/
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /*adjust spacing on text-container */
+}
+
+.typing-text {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+
+
+
+
+
+/*DECENDING SLIDE ANIMATION*/
+
+/*username*/
+form div:nth-child(1) {
+    animation: slideInFromTop 0.8s ease forwards;
+    animation-delay: 2s; 
+    opacity: 0;
+}
+
+
+/*password*/
+form div:nth-child(2) {
+    animation: slideInFromTop 0.8s ease forwards;
+    animation-delay: 2.2s;
+    opacity: 0;
+}
+
+
+/*login button */
+form button:nth-of-type(1) {
+    animation: slideInFromTop 0.8s ease forwards;
+    animation-delay: 2.4s; 
+    opacity: 0;
+}
+
+
+/*create acc button */
+form button:nth-of-type(2) {
+    animation: slideInFromTop 0.8s ease forwards;
+    animation-delay: 2.6s; 
+    opacity: 0;
+}
+
+
+/* placeholder text so it doesn't look out of place*/
+form div:last-of-type {
+    animation: slideInFromTop 0.8s ease forwards;
+    animation-delay: 2.8s; 
+    opacity: 0;
+}

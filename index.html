@@ -7,14 +7,9 @@
     <link rel="icon" href="icon.ico" />
 
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="index.css" />
 
 </head>
-
-
-
-
-
-
 <body>
     <header>
         <h1>Auto Expense Tracker</h1>
@@ -30,41 +25,42 @@
     </header>
 
     <main>
-        <h1>Welcome to Auto Expense Tracker</h1>
-        <p>New to Auto Expense Tracker? Create an account below or simply sign in.</p>
-
-
+        <h1 class="welcome-container">
+            <span>Welcome to your personal</span><br>
+            <span>Auto Expense Tracker</span>
+        </h1>
+        <!-- txt-container for better spacing -->
+         <!-- typing txt class for potential specific css changes -->
+        <div class="text-container">
+            <p class="typing-text">Sign in or create an account below</p>
+            <p class="typing-text">The process is the same for both</p>
+        </div>
 
         <form method="get" action="track.html">
             <div>
-                <span>Username</span>
-                <input type="text" placeholder="your@email.com" required />
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="your@email.com" required />
             </div>
             <div>
-                <span>Password</span>
-                <input type="your password" placeholder="your password" required />
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="your password" required />
             </div>
-
-
 
             <button type="submit">Login</button>
             <button type="submit">Create Account</button>
-                    <!-- ]Placeholder for future authentication stuff -->
+
+            <!-- Placeholder for future authentication service -->
             <div>
                 <p>Placeholder for authentication service integration</p>
             </div>
         </form>
-
-
-
-
     </main>
 
     <footer>
         <hr />
         <span class="text-reset">Mark Brede</span>
         <br />
-        <a href=https://github.com/markbrede/startup/tree/main>GitHub</a>
+        <a href="https://github.com/markbrede/startup/tree/main">GitHub</a>
     </footer>
 </body>
 </html>

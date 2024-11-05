@@ -7,6 +7,7 @@
     <link rel="icon" href="icon.ico" />
 
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="about.css" />
 
 
 </head>
@@ -26,22 +27,31 @@
 
     <main>
         <div id="picture" class="picture-box">
-            <!-- Adjust the width and height to scale the image as needed -->
-            <img width="1000px" height="auto" src="car.jpeg" alt="Picture of a Tesla Model Y driving." />
+            <img src="business.jpeg" alt="Picture of crayzayh confident business-men." />
         </div>
+
+
         <h2>About</h2>
         <p>
              By 150,000 miles, the additional cost of owning and maintaining a vehicle typically equals the vehicles price when new. This is due to consistent expenses like fuel, insurance, and maintenance.
              By 250,000 miles, these costs can triple the original purchase price. Auto Expense Tracker helps you manage your vehicle expenses effectively. Keep track of your fuel, insurance, and maintenance costs to understand your vehicle's total cost of ownership.
         </p>
-        <h2>What makes us different from the all the other budgeting apps?</h2>
-        <p>
-            Is it more expensive to maintain your older vehicle or purchase a new one? Can you really save money by going electric?
 
-             These are questions that can only be answered with the hard facts; your current cost per mile. 
-             AutoExpenseTracker allows you to categorize any expense. With your entries, AutoExpenseTracker will calculate your cost per mile and allow you to compare your cost with other users vehicles.
-             Additionally, you will be able to see the vehicles total cost as well as the cost per category (fuel, insurance, operating cost, and features)
-            Constructed by Mark Brede, this application aims to give users a detailed breakdown of their vehicles real cost.
+
+        <h2>What Makes us Different?</h2>
+        <p>             AutoExpenseTracker allows you to categorize any expense. With your entries, AutoExpenseTracker will calculate your cost per mile and allow you to compare your cost with other users vehicles.
+            Additionally, you will be able to see the vehicles total cost as well as the cost per category (fuel, insurance, operating cost, and features)
+           Constructed by Mark Brede, this application aims to give users a detailed breakdown of their vehicles real cost.
+        </p>
+
+
+        <h2>
+            Time for a New Vehicle?
+        </h2>
+        <p>   
+            Is it more expensive to maintain your older vehicle or purchase a new one? Can you really save money by going electric? 
+            These are questions that can only be answered with the hard facts; your current cost per mile. 
+            AutoExpenseTracker will allow you to confidently make that decision
         </p>
             <!-- Placeholder for Mapping Service -->
     <div>
@@ -55,5 +65,22 @@
         <br />
         <a href=https://github.com/markbrede/startup/tree/main>GitHub</a>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const aboutContent = document.querySelector('.about-content');
+            const windowHeight = window.innerHeight;
+    
+            function handleScroll() {
+                const scrollPosition = window.pageYOffset;
+                const contentPosition = Math.max(0, (windowHeight - scrollPosition) / windowHeight);
+                
+                aboutContent.style.transform = `translateY(${contentPosition * 100}%)`;
+                aboutContent.style.opacity = 1 - contentPosition;
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial call to set the initial position
+        });
+    </script>
 </body>
 </html>

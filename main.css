@@ -154,7 +154,7 @@ header {
     background-color: #555555;
   }
   
-  /* Form input styling */
+  /*NOTE TO SELF: The type attributes I have chosen must match for the styling to be applied*/
   input[type="text"],
   input[type="number"],
   input[type="email"],
