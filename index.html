@@ -28,37 +28,55 @@
         </header>
 
 
-        <main>
-            <h1 class="welcome-container">
-                <span>Welcome to your personal</span><br>
-                <span>Auto Expense Tracker</span>
-            </h1>
-            <!-- txt-container for better spacing -->
-            <!-- typing txt class for potential specific css changes -->
-            <div class="text-container">
-                <p class="typing-text">Sign in or create an account below</p>
-                <p class="typing-text">The process is the same for both</p>
+        <main class="grid-container">
+
+            <div class="welcome-box">
+
+                <h1 class="welcome-container">
+
+                    <span>Welcome to Auto Expense Tracker</span>
+
+                </h1>
+
             </div>
 
-            <form method="get" action="track.html">
-                <div>
-                    <label for="username">Username</label>
-                    <input type="text" id="username" placeholder="your@email.com" required />
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password" placeholder="your password" required />
-                </div>
+            <!-- txt-container for better spacing -->
+            <!-- typing txt class for potential specific css changes -->
+            <div class="form-box">
 
-                <button type="submit">Login</button>
-                <button type="submit">Create Account</button>
+                <div class="text-container">
 
-                <!-- Placeholder for future authentication service -->
-                <div>
-                    <p>Placeholder for authentication service integration</p>
+                    <p class="typing-text">Create Account or Sign in</p>
+
                 </div>
-            </form>
+        
+                <form method="get" action="track.html">
+
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="your@email.com" required />
+                    </div>
+
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="your password" required />
+                    </div>
+        
+                    <button type="submit">Login</button>
+                    <button type="submit">Create Account</button>
+        
+                    <div>
+                        <p>Placeholder for authentication service integration</p>
+                    </div>
+
+                </form>
+
+            </div>
+
         </main>
+        
+        
+        
 
 
         <footer>

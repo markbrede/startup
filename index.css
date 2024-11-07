@@ -9,13 +9,26 @@
 
 /*my welcome text styling */
 .welcome-container {
-    display: inline-block; /*both lines are now a single block */
-    text-align: center;
-    animation: slideInFromTop 1.5s ease-out forwards;
-    opacity: 50; /*initial transparency*/
+    text-align: left;
+    animation: fade-in 1.5s ease-out forwards;
+    opacity: 0;
 }
 
-/*slide in animation from the top */
+
+
+
+
+/*fade in animation */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*slide in animation from the top 
 @keyframes slideInFromTop {
     0% {
         transform: translateY(-30px);
@@ -25,9 +38,9 @@
         transform: translateY(0);
         opacity: 1;
     }
-}
+}*/
 
-/*fade animation*/
+/*fade from left to right animation*/
 @keyframes fadeInLeftToRight {
     0% {
         opacity: 0;
@@ -43,9 +56,7 @@
 
 
 
-/*FADE FROM LEFT TO RIGHT ANIMATION*/
-
-/*apply fade effect to the introductory text */
+/*FADE IN: Welcome text */
 .typing-text {
     font-family: inherit;
     font-size: 1em; /*match font size */
@@ -63,11 +74,11 @@
   height: 10vh; /*adjust spacing on text-container */
 }
 
-.typing-text {
+/*.typing-text {
   margin: 0;
   padding: 5px 0;
   text-align: center;
-}
+} */
 
 
 
@@ -77,7 +88,7 @@
 
 /*username*/
 form div:nth-child(1) {
-    animation: slideInFromTop 0.8s ease forwards;
+    animation: fadeInLeftToRight 0.8s ease forwards;
     animation-delay: 2s; 
     opacity: 0;
 }
@@ -85,7 +96,7 @@ form div:nth-child(1) {
 
 /*password*/
 form div:nth-child(2) {
-    animation: slideInFromTop 0.8s ease forwards;
+    animation: fadeInLeftToRight 0.8s ease forwards;
     animation-delay: 2.2s;
     opacity: 0;
 }
@@ -93,7 +104,7 @@ form div:nth-child(2) {
 
 /*login button */
 form button:nth-of-type(1) {
-    animation: slideInFromTop 0.8s ease forwards;
+    animation: fadeInLeftToRight 0.8s ease forwards;
     animation-delay: 2.4s; 
     opacity: 0;
 }
@@ -101,7 +112,7 @@ form button:nth-of-type(1) {
 
 /*create acc button */
 form button:nth-of-type(2) {
-    animation: slideInFromTop 0.8s ease forwards;
+    animation: fadeInLeftToRight 0.8s ease forwards;
     animation-delay: 2.6s; 
     opacity: 0;
 }
@@ -109,7 +120,50 @@ form button:nth-of-type(2) {
 
 /* placeholder text so it doesn't look out of place*/
 form div:last-of-type {
-    animation: slideInFromTop 0.8s ease forwards;
+    animation: fadeInLeftToRight 0.8s ease forwards;
     animation-delay: 2.8s; 
     opacity: 0;
+}
+
+
+/* GRID */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns on larger screens */
+    gap: 20px; /* Space between the columns */
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Style for the welcome box (left side) */
+.welcome-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    padding: 20px;
+    background-color: #444444; /* Example background color */
+    border-radius: 8px;
+}
+
+/* Style for the form box (right side) */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #444444; /* Example background color */
+    border-radius: 8px;
+}
+
+/* Responsive behavior: single column on smaller screens */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Switch to single column */
+    }
+
+    .welcome-box {
+        display: none; /* Hide the welcome box on small screens */
+    }
 }
