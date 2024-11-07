@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auto Expense Tracker</title>
-    <link rel="icon" href="icon.ico" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Auto Expense Tracker</title>
+        <link rel="icon" href="icon.ico" />
 
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="index.css" />
-
+        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="index.css" />
 </head>
+
+
+
 <body>
-    <header>
-        <h1>Auto Expense Tracker</h1>
-        <nav>
-            <menu>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="track.html">Track Expenses</a></li>
-                <li><a href="history.html">Expense History</a></li>
-                <li><a href="about.html">About</a></li>
-            </menu>
-        </nav>
-        <hr />
-    </header>
+        <header>
+            <h1>Auto Expense Tracker</h1>
+            <nav>
+                <menu>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="track.html">Track Expenses</a></li>
+                    <li><a href="history.html">Expense History</a></li>
+                    <li><a href="about.html">About</a></li>
+                </menu>
+            </nav>
+            <hr />
+        </header>
 
-    <main>
-        <h1 class="welcome-container">
-            <span>Welcome to your personal</span><br>
-            <span>Auto Expense Tracker</span>
-        </h1>
-        <!-- txt-container for better spacing -->
-         <!-- typing txt class for potential specific css changes -->
-        <div class="text-container">
-            <p class="typing-text">Sign in or create an account below</p>
-            <p class="typing-text">The process is the same for both</p>
-        </div>
 
-        <form method="get" action="track.html">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="your@email.com" required />
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="your password" required />
+        <main>
+            <h1 class="welcome-container">
+                <span>Welcome to your personal</span><br>
+                <span>Auto Expense Tracker</span>
+            </h1>
+            <!-- txt-container for better spacing -->
+            <!-- typing txt class for potential specific css changes -->
+            <div class="text-container">
+                <p class="typing-text">Sign in or create an account below</p>
+                <p class="typing-text">The process is the same for both</p>
             </div>
 
-            <button type="submit">Login</button>
-            <button type="submit">Create Account</button>
+            <form method="get" action="track.html">
+                <div>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="your@email.com" required />
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="your password" required />
+                </div>
 
-            <!-- Placeholder for future authentication service -->
-            <div>
-                <p>Placeholder for authentication service integration</p>
-            </div>
-        </form>
-    </main>
+                <button type="submit">Login</button>
+                <button type="submit">Create Account</button>
 
-    <footer>
-        <hr />
-        <span class="text-reset">Mark Brede</span>
-        <br />
-        <a href="https://github.com/markbrede/startup/tree/main">GitHub</a>
-    </footer>
+                <!-- Placeholder for future authentication service -->
+                <div>
+                    <p>Placeholder for authentication service integration</p>
+                </div>
+            </form>
+        </main>
+
+
+        <footer>
+            <hr />
+            <span class="text-reset">Mark Brede</span>
+            <br />
+            <a href="https://github.com/markbrede/startup/tree/main">GitHub</a>
+        </footer>
 </body>
 </html>
