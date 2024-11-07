@@ -1,19 +1,18 @@
-/*handel device orientation
-@media (orientation: portrait) {
-    div {
-      transform: rotate(270deg);
-    }
+  /*darkening the header image for readability */
+  header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 51, 51, 0.90); /*semitransparent*/
+    z-index: 1;
   }
-*/
 
-
-/*my welcome text styling */
-.welcome-container {
-    text-align: left;
-    animation: fade-in 1.5s ease-out forwards;
-    opacity: 0;
-}
-
+  .img-container header {
+    background-image: none !important;
+  }
 
 
 
@@ -55,6 +54,12 @@
 
 
 
+/*my welcome text styling */
+.welcome-container {
+    text-align: left;
+    animation: fade-in 1.5s ease-out forwards;
+    opacity: 0;
+}
 
 /*FADE IN: Welcome text */
 .typing-text {
@@ -74,17 +79,11 @@
   height: 10vh; /*adjust spacing on text-container */
 }
 
-/*.typing-text {
-  margin: 0;
-  padding: 5px 0;
-  text-align: center;
-} */
 
 
 
 
-
-/*DECENDING SLIDE ANIMATION*/
+/*FADE in LEFT TO RIGHT DECENDING: Sign in stuff*/
 
 /*username*/
 form div:nth-child(1) {
@@ -113,7 +112,7 @@ form button:nth-of-type(1) {
 /*create acc button */
 form button:nth-of-type(2) {
     animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2.6s; 
+    animation-delay: 2.5s; 
     opacity: 0;
 }
 
@@ -126,44 +125,82 @@ form div:last-of-type {
 }
 
 
-/* GRID */
+
+
+
+/*MAIN GRID*/
+
+
+/* FULL-SCREEN VID */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+    z-index: -1; /* Place it behind other content */
+}
+
+
+
+
+
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two equal columns on larger screens */
-    gap: 20px; /* Space between the columns */
-    max-width: 800px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
     margin: 20px auto;
+    align-items: center;
+    min-height: 65vh; /* Make the container cover the full viewport height */
 }
 
-/* Style for the welcome box (left side) */
+/* LEFT WELCOME BOX */
 .welcome-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
     text-align: left;
-    padding: 20px;
-    background-color: #444444; /* Example background color */
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 40px;
+    background-color: none; /*black with transparency */
+    padding: 40px;
     border-radius: 8px;
 }
 
-/* Style for the form box (right side) */
+/* Sign-in box styling (right side) */
 .form-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #444444; /* Example background color */
+    background-color: rgba(44, 44, 44, 0.8); /*black with transparency */
+    padding: 40px;
     border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
-/* Responsive behavior: single column on smaller screens */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/*hide welcome box on small screen*/
 @media (max-width: 600px) {
     .grid-container {
         grid-template-columns: 1fr; /* Switch to single column */
     }
 
     .welcome-box {
-        display: none; /* Hide the welcome box on small screens */
+        display: none; /*hide*/
     }
+}
+
+
+/* Override main container styling for index.html */
+.grid-container {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    /* Remove other styles from main.css as needed */
 }
