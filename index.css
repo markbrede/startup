@@ -54,22 +54,24 @@
 
 
 
-/*my welcome text styling */
+/*WELCOME BOX */
+/*Welcome*/
 .welcome-container {
     text-align: left;
-    animation: fade-in 1.5s ease-out forwards;
-    opacity: 0;
-}
-
-/*FADE IN: Welcome text */
-.typing-text {
-    font-family: inherit;
-    font-size: 1em; /*match font size */
-    opacity: 0; /* as said before, initial transparency*/
     animation: fadeInLeftToRight 1s ease forwards;
-    animation-delay: 1s;
+    opacity: 0;
+    margin-bottom: -30px; /* Reduce space below "Welcome" */
+    line-height: 1.2; /* Adjusts space between lines */
+    animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
 }
-
+/*to your digital garage*/
+.subtitle {
+    font-size: 1em; /* adjust text size size */
+    font-weight: normal; /* removing bold txt */
+    opacity: 0; /* Start hidden for fade-in effect */
+    animation: fadeInLeftToRight 1.2s ease forwards;
+    animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
+}
 
 .text-container {
   display: flex;
@@ -85,50 +87,57 @@
 
 /*FADE in LEFT TO RIGHT DECENDING: Sign in stuff*/
 
+/*Create Account or Sign in*/
+.typing-text {
+    font-family: inherit;
+    font-size: 1.2em; /* Match font size */
+    font-weight: bold; /* Make text bold */
+    opacity: 0; /* Initial transparency for animation */
+    animation: fade-in 1.2s ease-out forwards;
+    animation-delay: 1s;
+}
+
 /*username*/
 form div:nth-child(1) {
-    animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2s; 
+    animation: fadeInLeftToRight 0.5s ease forwards;
+    animation-delay: 2.4s; 
     opacity: 0;
 }
 
 
 /*password*/
 form div:nth-child(2) {
-    animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2.2s;
+    animation: fadeInLeftToRight 0.5s ease forwards;
+    animation-delay: 2.5s;
     opacity: 0;
 }
 
 
 /*login button */
 form button:nth-of-type(1) {
-    animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2.4s; 
+    animation: fadeInLeftToRight 0.5s ease forwards;
+    animation-delay: 2.6s; 
     opacity: 0;
 }
 
 
 /*create acc button */
 form button:nth-of-type(2) {
-    animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2.5s; 
+    animation: fadeInLeftToRight 0.5s ease forwards;
+    animation-delay: 2.65s; 
     opacity: 0;
 }
 
 
 /* placeholder text so it doesn't look out of place*/
 form div:last-of-type {
-    animation: fadeInLeftToRight 0.8s ease forwards;
-    animation-delay: 2.8s; 
+    animation: fadeInLeftToRight 0.5s ease forwards;
+    animation-delay: 2.7s; 
     opacity: 0;
 }
 
 
 
-
-
-/*MAIN GRID*/
 
 
 /* FULL-SCREEN VID */
@@ -146,10 +155,11 @@ form div:last-of-type {
 
 
 
+/*MAIN GRID*/
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 150px;
     max-width: 1200px;
     margin: 20px auto;
     align-items: center;
@@ -163,10 +173,15 @@ form div:last-of-type {
     font-size: 1.7em;
     font-weight: bold;
     padding: 40px;
-    background-color: none; /*black with transparency */
-    padding: 40px;
+    background-color: none;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /*aligns content to the top */
+    align-items: flex-start;
+    height: 100%; /*uses the full height of the grid box */
 }
+
 
 /* Sign-in box styling (right side) */
 .form-box {
