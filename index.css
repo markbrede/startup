@@ -1,4 +1,4 @@
-  /*darkening the header image for readability */
+  /*header specific for homepage*/
   header::before {
     content: "";
     position: absolute;
@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 51, 51, 0.90); /*semitransparent*/
+    background-color: rgba(41, 41, 41, 0.9); /*semitransparent*/
     z-index: 1;
   }
 
@@ -70,7 +70,7 @@
     font-weight: normal; /* removing bold txt */
     opacity: 0; /* Start hidden for fade-in effect */
     animation: fadeInLeftToRight 1.2s ease forwards;
-    animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
+    animation-delay: .15s; /* Delay fade-in to start after "Welcome" */
 }
 
 .text-container {
@@ -94,13 +94,13 @@
     font-weight: bold; /* Make text bold */
     opacity: 0; /* Initial transparency for animation */
     animation: fade-in 1.2s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
 }
 
 /*username*/
 form div:nth-child(1) {
     animation: fadeInLeftToRight 0.5s ease forwards;
-    animation-delay: 2.4s; 
+    animation-delay: 2.3s; 
     opacity: 0;
 }
 
@@ -116,7 +116,7 @@ form div:nth-child(2) {
 /*login button */
 form button:nth-of-type(1) {
     animation: fadeInLeftToRight 0.5s ease forwards;
-    animation-delay: 2.6s; 
+    animation-delay: 2.8s; 
     opacity: 0;
 }
 
@@ -124,7 +124,7 @@ form button:nth-of-type(1) {
 /*create acc button */
 form button:nth-of-type(2) {
     animation: fadeInLeftToRight 0.5s ease forwards;
-    animation-delay: 2.65s; 
+    animation-delay: 2.9s; 
     opacity: 0;
 }
 
@@ -132,7 +132,7 @@ form button:nth-of-type(2) {
 /* placeholder text so it doesn't look out of place*/
 form div:last-of-type {
     animation: fadeInLeftToRight 0.5s ease forwards;
-    animation-delay: 2.7s; 
+    animation-delay: 3.0s; 
     opacity: 0;
 }
 
@@ -168,7 +168,7 @@ form div:last-of-type {
 
 /* LEFT WELCOME BOX */
 .welcome-box {
-    color: white;
+    color: #e0e0e0;
     text-align: left;
     font-size: 1.7em;
     font-weight: bold;
