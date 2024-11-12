@@ -1,35 +1,36 @@
-/*handel device orientation
-@media (orientation: portrait) {
-  div {
-    transform: rotate(270deg);
+/* Adjusts for small screens */
+@media (max-width: 600px) {
+  #picture {
+    max-width: 90%; /*keep pics from getting too big on small screens */
+  }
+
+  nav menu {
+    flex-direction: column; /* stack menu items vertically */
+  }
+
+  header, footer {
+    padding: 10px; /*reduce padding in header and footer */
+  }
+
+  main {
+    padding: 15px; /* adjust padding in main content area */
   }
 }
-*/
+/*--------------------------------------------------------------HEADER--------------------------------------------------------------*/
 
-/* MAIN general page layout */
-body {
-    display: flex;
-    flex-direction: column;
-    min-width: 375px;
-    font-family: Arial, sans-serif;
-    color: #e0e0e0;
-    background-color: #1e1e1e; /*background*/
-    margin: 0;
-  }
-  
-/*HEADER now with background image */
+
 header {
-    flex: 0 80px;
-    text-align: center;
-    color: #e0e0e0;
-    padding: 15px 0;
+    flex: 0 80px; /*header size */
+    text-align: center; /*center title (Auto Expense Tracker)*/
+    color: #e0e0e0; /* Title color*/
+    padding: 15px 0; /* header spacing*/
     background-image: url('car.jpeg');
-    background-size: cover; /*scale the image for header */
-    background-position: center;
-    position: relative; /*position for overlay*/
+    background-size: cover; /*Makes the header image take up all the space*/
+    background-position: center; /*centers the picture */
+    position: relative; /*helps with the dark overlay */
   }
   
-  /*darkening the header image for readability */
+  /*framing up a tint to cover the image (help my txt visibility)*/
   header::before {
     content: "";
     position: absolute;
@@ -37,89 +38,114 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 51, 51, 0.5); /*semitransparent*/
-    z-index: 1;
+    background-color: rgba(54, 51, 51, 0.45); /*make header img darker to help with txt visablility*/
+    z-index: 1; /* tint goes on top of the image */
   }
   
+  /* This is for the title*/
   header h1 {
     position: relative;
-    font-size: 2em;
+    font-size: 2em; /* Makes the words bigger */
     margin: 0;
-    font-weight: 600;
-    z-index: 2; /*txt above overlay*/
+    font-weight: 600; /* Makes the words a bit bolder */
+    z-index: 2; /* Makes sure the words are on top of the dark layer */
   }
   
+  /* This is for the menu at the top */
   nav menu {
     display: flex;
-    justify-content: center;
-    list-style: none;
+    justify-content: center; /* Puts the menu items in the middle */
+    list-style: none; /* Takes away the dots next to list items */
     padding: 10px 0;
     margin: 0;
     position: relative;
-    z-index: 2;
+    z-index: 2; /* Makes sure the menu is on top of the dark layer */
   }  
   
+  /* This is for each item in the menu */
   nav menu li {
-    margin: 0 15px;
+    margin: 0 15px; /* Adds space between menu items */
   }
   
+  /* This is for the links in the menu */
   nav menu li a {
-    text-decoration: none;
-    color: #e0e0e0; /*applied to links*/
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
+    text-decoration: none; /* Takes away the underline */
+    color: #e0e0e0; /* Makes the words light gray */
+    font-weight: bold; /* Makes the words bold */
+    transition: color 0.3s ease-in-out; /* Makes the color change smoothly */
   }
 
+  /* This shows which page we're on */
   nav menu li a.active {
-    color: #ffffff; /* pure white for the active page*/
-    border-bottom: 2px solid #ffffff; /*Underline*/
-    pointer-events: none; /*stops you from clicking on the page link you are currently on*/
+    color: #ffffff; /* Makes the active page white */
+    border-bottom: 2px solid #ffffff; /* Adds a line under the active page */
+    pointer-events: none; /* Makes it so we can't click on the page we're already on */
 }
 
-
-  /*color applied we I hover*/
+  /* This changes the color when we hover over a menu item */
   nav menu li a:hover {
     color: #a0a0a0; 
   }
-  
 
 
+/*--------------------------------------------------------------BODY--------------------------------------------------------------*/
 
 
-  /*MAIN*/
+body {
+  display: flex;
+  flex-direction: column; /*stack on top of each other */
+  min-width: 375px; /*page isn't too skinny */
+  font-family: Arial, sans-serif;
+  color: #e0e0e0; /*words light gray */
+  background-image: url('GTR.jpeg');
+  background-size: cover; /* This ensures the image covers the full viewport */
+  background-position: center; /* Centers the image to align with the video */
+  margin: 0;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Matches the height of the video */
+}
+
+
+/*--------------------------------------------------------------MAIN--------------------------------------------------------------*/
+
+  /* box surrounding inputs*/
   main {
     flex: 1;
-    padding: 30px;
+    padding: 30px; /*make box bigger */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #2b2b2b;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /*shadow*/
+    align-items: center; /* centers txt inside box */
+    justify-content: flex-start; /*starts content at the top */
+    background-color: #2b2b2b; /* Makes the background a bit lighter than the body */
+    border-radius: 8px; /*rounds the corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     max-width: 800px;
-    margin: 20px auto;
+    margin: 20px auto; /*center the box and adds space above and below */
   }
   
-  /*applied to tables in main content */
+
+
+
+
+  /*for tables in the box*/
   table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: collapse; /* get the borders to contact each other */
     margin-top: 20px;
   }
-  
-  /*for table borders */
+  /*table borders*/
   table, th, td {
     border: 1px solid #444444;
     padding: 10px;
   }
-  
+  /*top row of the table */
   th {
-    background-color: #3b3b3b; /*keep headers dark*/
-    color: #e0e0e0; /*I will continue to adjust this for txt readbility*/
+    background-color: #3b3b3b; /* Makes the headers a bit darker */
+    color: #e0e0e0; /* txt in the top row of the table*/
     font-weight: bold;
   }
-  
+  /*every other row a different color */
   tr:nth-child(even) {
     background-color: #242424;
   }
@@ -127,50 +153,26 @@ header {
 
 
 
-  
-  /*FOOTER*/
-  footer {
-    flex: 0 40px;
-    text-align: center;
-    padding: 15px 0;
-    background-color: #333333;
-    color: #e0e0e0;
-    border-top: 1px solid #444444;
-  }
-  
-  footer span,
-  footer a {
-    color: #e0e0e0;
-  }
-  
-  footer a {
-    text-decoration: none;
-    margin-left: 10px;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  footer a:hover {
-    color: #a0a0a0; /*lighter gray on hover */
-  }
-  
-  /*button styling*/
+
+  /*click buttons*/
   button {
-    background-color: #2e59b4;
+    background-color: #2e59b4; /* Makes buttons blue */
     color: #e0e0e0;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 5px; /* Rounds the corners */
+    cursor: pointer; /* Changes the mouse to a pointing hand */
     font-size: 1em;
     font-weight: bold;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out; /* Makes the color change smoothly */
   }
   
+  /* This changes the button color when we hover over it */
   button:hover {
     background-color: #555555;
   }
   
-  /*NOTE TO SELF: The type attributes I have chosen must match for the styling to be applied*/
+  /* This is how text boxes look */
   input[type="text"],
   input[type="number"],
   input[type="email"],
@@ -179,36 +181,68 @@ header {
     padding: 8px;
     margin: 10px 0;
     border: 1px solid #444444;
-    border-radius: 4px;
+    border-radius: 4px; /* Rounds the corners */
     background-color: #333333;
     color: #e0e0e0;
   }
   
+  /* make input txt lighter*/
   input::placeholder {
-    color: #a0a0a0; /*lighter color for placeholders */
+    color: #a0a0a0;
+  }
+
+
+/*--------------------------------------------------------------FOOTER--------------------------------------------------------------*/
+
+
+  footer {
+    flex-shrink: 1;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #232323; /*footer color*/
+    color: #e0e0e0;
+    border-top: 1px solid #131313; /*line at top of footer (kinda like shadowing)*/
+  }
+  /*words and links in the footer */
+  footer span,
+  footer a {
+    color: #e0e0e0;
+  }
+  /*links in the footer */
+  footer a {
+    text-decoration: none; /*takes away the default link underline */
+    margin-left: 10px;
+    transition: color 0.3s ease-in-out;
+  }
+  /*hover color change for footer link */
+  footer a:hover {
+    color: #a0a0a0;
   }
   
-  /*active adjustments*/
-  @media (max-width: 600px) {
-    nav menu {
-      flex-direction: column;
-    }
   
-    header, footer {
-      padding: 10px;
-    }
-  
-    main {
-      padding: 15px;
-    }
-  }
-  
+  /*hides the header and footer on short screens */
   @media (max-height: 600px) {
     header, footer {
       display: none;
     }
     main {
-      flex: 1 100vh;
+      flex: 1 100vh; /* Makes main part take up whole screen */
     }
   }
   
+
+
+/*
+  html, body {
+    height: 100%; /* Ensures body takes up the full height of the viewport 
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Allows main to grow and push footer to bottom 
+}
+
+footer {
+    flex-shrink: 0; /* Keeps footer at the bottom of the page 
+}
