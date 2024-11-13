@@ -1,0 +1,24 @@
+/* frames for animation */
+@keyframes fadeIn {
+    from { 
+        opacity: 100;
+        transform: translateY(-20px);
+    }
+    to { 
+        opacity: 100;
+        transform: translateY(0);
+    }
+}
+
+/*fade in effect for the main content */
+main {
+    animation: fadeIn .5s ease-out;
+    font-size: 2;
+    font-weight: 300;
+}
+
+.track-title {
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}

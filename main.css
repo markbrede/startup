@@ -24,7 +24,6 @@ header {
     text-align: center; /*center title (Auto Expense Tracker)*/
     color: #e0e0e0; /* Title color*/
     padding: 15px 0; /* header spacing*/
-    background-image: url('car.jpeg');
     background-size: cover; /*Makes the header image take up all the space*/
     background-position: center; /*centers the picture */
     position: relative; /*helps with the dark overlay */
