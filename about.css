@@ -1,0 +1,100 @@
+/* Fade-in effect for descending elements */
+.about-content {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+body.scrolled .about-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive styling for business.jpeg */
+.picture-box img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.picture-box img:hover {
+    transform: scale(1.05); /* Adds a slight zoom on hover */
+}
+
+/* Style tweaks for content sections */
+main h2 {
+    font-size: 1.8em;
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #d0d0d0;
+    text-align: justify;
+}
+
+/* Additional styling for links */
+a {
+    color: #1e90ff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+/* fade effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }  /* Starts invisible and lower */
+    to { opacity: 1; transform: translateY(0); }       /* Ends visible and in place */
+}
+
+/* everything in the main section fades in*/
+main > * {
+    animation: fadeIn 0.5s ease-out forwards;  /*fadein animation */
+    opacity: 0;                 /* starts invisible */
+}
+
+/* decending fade */
+main > *:nth-child(1) { animation-delay: 0.1s; }
+main > *:nth-child(2) { animation-delay: 0.2s; }
+main > *:nth-child(3) { animation-delay: 0.3s; }
+main > *:nth-child(4) { animation-delay: 0.4s; }
+main > *:nth-child(5) { animation-delay: 0.5s; }
+main > *:nth-child(6) { animation-delay: 0.6s; }
+main > *:nth-child(7) { animation-delay: 0.7s; }  
+
+
+
+/*this adds an unnecessary but subtle attention getting line under the heading when you point at it */
+h2::after {
+    content: '';                /* get an empty box */
+    position: absolute;         /* place the box */
+    width: 0;
+    height: 3px;                /*thin line */
+    bottom: -5px;
+    left: 0;                    /*start from the left */
+    background-color: #b4b2b2;
+    transition: width .5s ease-in-out;
+}
+
+/* Makes the line grow when you point at the heading */
+h2:hover::after {
+    width: 100%;                /* Makes the line full width */
+}
+
+
+
+
+
+
+

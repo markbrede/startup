@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(41, 41, 41, 0.9); /*semitransparent*/
+    background-color: rgba(29, 29, 29, 0.8); /*semitransparent*/
     z-index: 1;
   }
 
@@ -58,6 +58,8 @@
 /*Welcome*/
 .welcome-container {
     text-align: left;
+    font-size: 2em; /* adjust text size size */
+    font-weight: 400;
     animation: fadeInLeftToRight 1s ease forwards;
     opacity: 0;
     margin-bottom: -30px; /* Reduce space below "Welcome" */
@@ -66,8 +68,8 @@
 }
 /*to your digital garage*/
 .subtitle {
-    font-size: 1em; /* adjust text size size */
-    font-weight: normal; /* removing bold txt */
+    font-size: .9em; /* adjust text size size */
+    font-weight: 270; /* removing bold txt */
     opacity: 0; /* Start hidden for fade-in effect */
     animation: fadeInLeftToRight 1s ease forwards;
     animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
@@ -91,7 +93,7 @@
 .typing-text {
     font-family: inherit;
     font-size: 1.2em; /* Match font size */
-    font-weight: bold; /* Make text bold */
+    font-weight: 500;
     opacity: 0; /* Initial transparency for animation */
     animation: fadeInLeftToRight 1s ease-out forwards;
     animation-delay: .9s;
@@ -99,6 +101,8 @@
 
 /*username*/
 form div:nth-child(1) {
+    font-size: .9em; /* Match font size */
+    font-weight: 400; /* Make text bold */
     animation: fade-in 0.8s ease forwards;
     animation-delay: 1.9s; 
     opacity: 0;
@@ -107,6 +111,8 @@ form div:nth-child(1) {
 
 /*password*/
 form div:nth-child(2) {
+    font-size: .9em; /* Match font size */
+    font-weight: 400; /* Make text bold */
     animation: fade-in 0.8s ease forwards;
     animation-delay: 2.1s;
     opacity: 0;
@@ -115,6 +121,8 @@ form div:nth-child(2) {
 
 /*login button */
 form button:nth-of-type(1) {
+    font-size: .9em; /* Match font size */
+    font-weight: 600; /* Make text bold */
     animation: fade-in 0.8s ease forwards;
     animation-delay: 2.3s; 
     opacity: 0;
@@ -123,6 +131,8 @@ form button:nth-of-type(1) {
 
 /*create acc button */
 form button:nth-of-type(2) {
+    font-size: .9em; /* Match font size */
+    font-weight: 600; /* Make text bold */
     animation: fade-in 0.8s ease forwards;
     animation-delay: 2.5s; 
     opacity: 0;
