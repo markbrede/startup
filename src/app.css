@@ -232,20 +232,3 @@ body {
       flex: 1 100vh; /* Makes main part take up whole screen */
     }
   }
-  
-
-
-/*
-  html, body {
-    height: 100%; /* Ensures body takes up the full height of the viewport 
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1; /* Allows main to grow and push footer to bottom 
-}
-
-footer {
-    flex-shrink: 0; /* Keeps footer at the bottom of the page 
-}
