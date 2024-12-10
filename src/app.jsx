@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 import './app.css';
-import '../src/login/index.css';
+import '../src/login/login.css';
 
 function Layout() {
   return (
@@ -10,10 +10,10 @@ function Layout() {
         <h1>Auto Expense Tracker</h1>
         <nav>
           <menu>
-            <li><NavLink to="/" end>Home</NavLink></li>
-            <li><NavLink to="/track">Track Expenses</NavLink></li>
-            <li><NavLink to="/history">Expense History</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/track">Track Expenses</Link></li>
+            <li><Link to="/history">Expense History</Link></li>
+            <li><Link to="/about">About</Link></li>
           </menu>
         </nav>
         <hr />
