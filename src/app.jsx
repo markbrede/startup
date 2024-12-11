@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
 import { Login } from '../src/login/login';
 import { Track } from '../src/track/track';
@@ -6,11 +6,9 @@ import { History } from '../src/history/history';
 import { About } from '../src/about/about';
 import './app.css';
 
-
-
 function Layout() {
   return (
-    <div className=" img-container">
+    <div className="img-container">
       <header>
         <h1>Auto Expense Tracker</h1>
         <nav>
@@ -39,14 +37,23 @@ function Layout() {
 }
 
 export default function App() {
+  const [expenses, setExpenses] = useState([]);
+  const [username, setUsername] = useState(localStorage.getItem('username') || '');
+
+  const addExpense = (expense) => {
+    setExpenses((prev) => [...prev, expense]);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* Replace the placeholder with the Login component */}
-          <Route index element={<Login />} />
-          <Route path="track" element={<Track />} />
-          <Route path="history" element={<History />} />
+          <Route
+            index
+            element={<Login username={username} setUsername={setUsername} />}
+          />
+          <Route path="track" element={<Track onAddExpense={addExpense} />} />
+          <Route path="history" element={<History expenses={expenses} />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Route>
@@ -54,6 +61,7 @@ export default function App() {
     </BrowserRouter>
   );
 }
+
 
 function NotFound() {
   return (

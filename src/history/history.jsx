@@ -1,7 +1,7 @@
 import React from 'react';
 import './history.css';
 
-export function History() {
+export function History({ expenses }) {
   return (
     <div className="history-container">
       <main>
@@ -16,18 +16,16 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><small>YYYY-MM-DD</small></td>
-              <td><small>Make & Model</small></td>
-              <td><small>Expense Type</small></td>
-              <td><small>Amount</small></td>
-            </tr>
+            {expenses.map((expense, index) => (
+              <tr key={index}>
+                <td>{expense.date}</td>
+                <td>{expense.vehicle}</td>
+                <td>{expense.expenseType}</td>
+                <td>${expense.amount}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
-        {/* Placeholder for WebSocket Service */}
-        <div>
-          <p>Placeholder for websocket. Realtime updates</p>
-        </div>
       </main>
     </div>
   );

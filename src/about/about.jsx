@@ -1,12 +1,30 @@
 import React from 'react';
 import './about.css';
 
-export function About() {
+export function About(props) {
+  const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
+  const [quote, setQuote] = React.useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+
+  // We only want this to render the first time the component is created and so we provide an empty dependency list.
+  React.useEffect(() => {
+    setImageUrl(`placeholder.jpg`);
+    setQuote('Show me the code');
+    setQuoteAuthor('Linus Torvalds');
+  }, []);
+
+  
   return (
     <div className="about-container">
       <main>
-        <div id="picture" className="picture-box">
-          <img src="business.jpeg" alt="Picture of confident business professionals." />
+
+        <div id='picture' className='picture-box'>
+          <img src={imageUrl} alt='random image' />
+        </div>
+
+        <div className='quote-box bg-light text-dark'>
+          <p className='quote'>{quote}</p>
+          <p className='author'>{quoteAuthor}</p>
         </div>
 
         <h2>A Little About Us</h2>

@@ -95,6 +95,24 @@ h2:hover::after {
 
 
 
-
+.quote-box {
+    margin-top: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+  
+  .quote {
+    font-size: x-small;
+    font-style: italic;
+  }
+  
+  .author {
+    font-size: xx-small;
+    text-align: right;
+  }
+  
+  .author::before {
+    content: " - ";
+  }
 
 
