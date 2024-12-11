@@ -221,3 +221,55 @@ form div:last-of-type {
     border-radius: 0;
     /* Remove other styles from main.css as needed */
 }
+
+/* Authenticated Login Message Styling */
+.welcome-box h1.welcome-container {
+    font-size: 1.8em; /* Adjust the font size */
+    font-weight: 600; /* Make it semi-bold */
+    color: #eaeaea; /* Green color to indicate success */
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Add space below the text */
+    animation: fade-in 1s ease-out forwards; /* Apply fade-in effect */
+    opacity: 0; /* Initial hidden state for fade-in */
+}
+
+/* Fade-in animation for the login message */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); /* Slight slide from top */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling for the logout button */
+.welcome-box button {
+    font-size: small; /* Standard button size */
+    padding: 10px 20px; /* Add padding for better click area */
+    background-color: #f44336; /* Red background for logout */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.welcome-box button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+.button-container {
+    display: flex; /* Use flexbox layout */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px; /* Add some space above the button container */
+}
+
+.welcome-box button {
+    flex: 1; /* Optional: Make buttons take equal width */
+}
+
+
