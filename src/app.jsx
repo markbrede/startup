@@ -1,20 +1,25 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link, Outlet } from 'react-router-dom';
+import { Login } from '../src/login/login';
+import { Track } from '../src/track/track';
+import { History } from '../src/history/history';
+import { About } from '../src/about/about';
 import './app.css';
-import '../src/login/login.css';
+
+
 
 function Layout() {
   return (
-    <div className="body img-container">
+    <div className=" img-container">
       <header>
         <h1>Auto Expense Tracker</h1>
         <nav>
-          <menu>
+          <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/track">Track Expenses</Link></li>
             <li><Link to="/history">Expense History</Link></li>
             <li><Link to="/about">About</Link></li>
-          </menu>
+          </ul>
         </nav>
         <hr />
       </header>
@@ -38,11 +43,12 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<>login displayed here</>} />
-          <Route path="track" element={<>track expenses displayed here</>} />
-          <Route path="history" element={<>history displayed here</>} />
-          <Route path="about" element={<>about displayed here</>} />
-          <Route path='*' element={<NotFound />} />
+          {/* Replace the placeholder with the Login component */}
+          <Route index element={<Login />} />
+          <Route path="track" element={<Track />} />
+          <Route path="history" element={<History />} />
+          <Route path="about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -50,5 +56,9 @@ export default function App() {
 }
 
 function NotFound() {
-    return <main className='container-fluid bg-secondary text-center'>Error 404: Address unknown.</main>;
-  }
+  return (
+    <main className="container-fluid bg-secondary text-center">
+      Error 404: Address unknown.
+    </main>
+  );
+}

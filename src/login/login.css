@@ -112,6 +112,8 @@ form div:nth-child(2) {
 form button:nth-of-type(1) {
     font-size: .9em; /* Match font size */
     font-weight: 600; /* Make text bold */
+    margin-right: 10px;
+    margin-bottom: 10px; /* Add bottom margin to create space */
     animation: fade-in 0.8s ease forwards;
     animation-delay: 2.3s; 
     opacity: 0;
@@ -159,7 +161,7 @@ form div:last-of-type {
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 150px;
+    gap: 10px;
     max-width: 1200px;
     margin: 20px auto;
     align-items: center;
