@@ -288,3 +288,44 @@ These key points summarize the fundamental aspects of CSS Flexbox, providing a s
       document.getElementById("title").textContent = "New Title";
     </script>
     ```
+
+    3 Main Takeaways
+React Router and Routing
+
+Learned how to use React Router for navigation between pages in a React app. This allows users to move between different components like login, track expenses, and view expense history without reloading the page.
+State Management with useState
+
+Learned how to use React’s useState hook to manage state in functional components. This includes managing form data (like vehicle, expense type, and amount) and tracking expenses across components.
+Passing Props Between Components
+
+Learned how to pass data (like expenses) between components by using props. This allows the Track component to send new expenses to the App component, and for the History component to display the list of expenses.
+Dec 11, 2024 - React Components & Routing
+Created Main Components for Tracking Expenses
+
+App Component
+
+Set up App.jsx as the main entry point and router using BrowserRouter and Routes from react-router-dom. This component handles routing between pages like Login, Track, and History.
+Login Component
+
+Implemented the Login.jsx component with conditional rendering based on the user’s authentication state. The login state is stored in localStorage, and the user can log in or out with corresponding actions.
+Track Component
+
+Built the Track.jsx component where users can add new expenses. The component includes form inputs for vehicle, expense type, and amount. Upon submission, the expense is passed to the App component and stored in the state.
+History Component
+
+Developed the History.jsx component to display a list of expenses in a table format. It receives the list of expenses as props from App.jsx.
+Dec 11, 2024 - State Management & Event Handling
+Managing Expense State
+
+useState Hook
+Used the useState hook to manage data like the username, expenses, and form input fields across the components. This helps ensure that data is passed dynamically from one component to another.
+Form Handling
+
+Implemented form submission in the Track.jsx component to add new expenses. The data from the form inputs (vehicle, expense type, amount) is collected, stored, and passed to the parent App component.
+Dec 11, 2024 - Component Integration
+Integrated Components for Shared State
+
+Integrated the Track and History components within the App component. This allows Track to send data to the App and History to receive the expenses, creating a shared state between components.
+Conditional Rendering
+
+Used conditional rendering in Login.jsx to display either the login form or a welcome message based on the user’s authentication status. This helps control access to other parts of the app.
