@@ -1,25 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './about.css';
 
-export function About(props) {
-  const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
-  const [quote, setQuote] = React.useState('Loading...');
-  const [quoteAuthor, setQuoteAuthor] = React.useState('unknown');
+export function About() {
+  const [imageUrl, setImageUrl] = useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
+  const [quote, setQuote] = useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = useState('unknown');
 
-  // We only want this to render the first time the component is created and so we provide an empty dependency list.
-  React.useEffect(() => {
-    setImageUrl(`placeholder.jpg`);
-    setQuote('Show me the code');
-    setQuoteAuthor('Linus Torvalds');
+  useEffect(() => {
+    // Fetch random image
+    const random = Math.floor(Math.random() * 1000);
+    fetch(`https://picsum.photos/v2/list?page=${random}&limit=1`)
+      .then((response) => response.json())
+      .then((data) => {
+        const containerEl = document.querySelector('#picture');
+        const width = containerEl.offsetWidth || 400; // Fallback width
+        const height = containerEl.offsetHeight || 300; // Fallback height
+        const apiUrl = `https://picsum.photos/id/${data[0].id}/${width}/${height}?grayscale`;
+        setImageUrl(apiUrl);
+      })
+      .catch(() => {
+        setImageUrl('placeholder.jpg'); // Fallback image
+      });
+
+    // Fetch random quote
+    fetch('https://quote.cs260.click')
+      .then((response) => response.json())
+      .then((data) => {
+        setQuote(data.quote);
+        setQuoteAuthor(data.author);
+      })
+      .catch(() => {
+        setQuote('Show me the code'); // Fallback quote
+        setQuoteAuthor('Linus Torvalds');
+      });
   }, []);
 
-  
   return (
     <div className="about-container">
       <main>
-
         <div id='picture' className='picture-box'>
-          <img src={imageUrl} alt='random image' />
+          <img src={imageUrl} alt='random' />
         </div>
 
         <div className='quote-box bg-light text-dark'>

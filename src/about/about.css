@@ -9,6 +9,12 @@ body.scrolled .about-content {
     opacity: 1;
     transform: translateY(0);
 }
+#picture {
+    width: 100%; /* Ensure the container spans the available width */
+    max-width: 600px; /* Limit the maximum size */
+    height: auto; /* Allow height to scale proportionally */
+    margin: 0 auto; /* Center the container */
+}
 
 /* Responsive styling for business.jpeg */
 .picture-box img {
