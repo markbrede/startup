@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import '../app.css';
 import './login.css';
@@ -9,24 +10,78 @@ export function Login() {
   const [username, setUsername] = useState('');
   const [error, setError] = useState(null);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (username.trim()) {
-      try {
-        localStorage.setItem('username', username);
+
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      fetch(`/api/auth/check?username=${storedUsername}`)
+        .then((response) => response.json())
+        .then((data) => {
+          if (!data.authenticated) {
+            localStorage.removeItem('username');
+            setAuthState('unauthenticated');
+          }
+        })
+        .catch(() => {
+          localStorage.removeItem('username');
+          setAuthState('unauthenticated');
+        });
+    }
+  }, []);
+  
+
+
+const handleLogin = async (e) => {
+  e.preventDefault();
+  const password = document.getElementById('password').value;
+  
+  if (username.trim() && password) {
+    try {
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          username: username.trim(),
+          password: password 
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('username', data.username);
         setAuthState('authenticated');
         setError(null);
-      } catch (e) {
-        setError('Failed to log in. Please try again.');
+      } else {
+        setError('Invalid username or password.');
       }
+    } catch (e) {
+      setError('Failed to log in. Please try again.');
     }
-  };
+  }
+};
 
-  const handleLogout = () => {
+  
+
+
+const handleLogout = async () => {
+  try {
+    await fetch('/api/auth/logout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username: localStorage.getItem('username') }),
+    });
+  } finally {
     localStorage.removeItem('username');
     setAuthState('unauthenticated');
     setUsername('');
-  };
+  }
+};
+
 
   // Function to navigate to Track Expenses
   const handleTrackExpenses = () => {
