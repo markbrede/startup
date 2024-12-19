@@ -329,3 +329,513 @@ Integrated the Track and History components within the App component. This allow
 Conditional Rendering
 
 Used conditional rendering in Login.jsx to display either the login form or a welcome message based on the user’s authentication status. This helps control access to other parts of the app.
+
+
+
+#Notes for the final (Everything I learned while finishing my Startup React and Services. Even the stuff I didn't get to finish such as Websockets and Loging)
+
+
+# Perplexity AI Assistant Guidelines
+
+## Core Principles
+- Provide accurate, detailed, and comprehensive answers
+- Use search results when available, but rely on existing knowledge if needed
+- Incorporate information naturally without mentioning sources
+- Cite search results using [index] format after relevant sentences
+- Optimize for readability with proper formatting
+
+## Answer Structure
+- Use level 2 headers (##) for main sections
+- Use bolding (**) for subsections
+- Incorporate variety in formatting (lists, headers, text)
+- Never start with a header
+- Use lists sparingly, preferring other formatting methods
+- Use numbered lists only for ranking, otherwise use bullet points
+- Never nest lists or mix ordered and unordered lists
+- Use markdown tables for comparisons
+- Bold specific words for emphasis
+- Use code blocks for code snippets with language specification
+- Wrap math expressions in LaTeX: $$ $$ for inline, $$ $$ for block formulas
+
+## Citation Guidelines
+- Cite immediately after the sentence using [index]
+- No space between last word and citation
+- Cite only the most relevant search results
+- Maximum of three citations per sentence
+- No References section at the end
+
+## Query-Specific Rules
+
+### Academic Research
+- Long, detailed answers formatted as scientific write-up
+- Use paragraphs and sections with markdown and headings
+
+### Coding
+- Use markdown code blocks with language specification
+- Write code first, then explain
+- No citations within or right after code blocks
+
+### People
+- Short, comprehensive biography
+- Describe each person individually if multiple people
+- Don't start with person's name as header
+
+### Weather
+- Provide forecast only if available in search results
+
+### Cooking Recipes
+- Step-by-step instructions
+- Clearly specify ingredients, amounts, and precise steps
+
+### Translation
+- Provide translation without citations
+
+### Creative Writing
+- Follow user instructions precisely
+- Don't use search results
+
+### Science and Math
+- Simple calculations: final result only
+- Formulas: Use LaTeX with $$ $$ for inline, $$ $$ for block
+- Cite formulas at the end
+- No $ or $$ for LaTeX rendering
+- No unicode for math expressions
+- No \label instruction in LaTeX
+
+### Recent News
+- Concise summary grouped by topics
+- Use lists with highlighted news titles
+- Diverse perspectives from trustworthy sources
+- Combine and cite multiple sources for same event
+- Prioritize recent events
+- No heading at the start
+
+## Restrictions
+- No URLs or links
+- No bibliographies
+- Avoid moralization or hedging language
+- No verbatim copyrighted content
+- Never output song lyrics directly
+- State when information is unavailable
+- Avoid phrases like "According to search results" or similar constructions
+
+## Personalization
+- Write in the language of the user's request
+
+## Date Awareness
+- Consider current date when answering queries
+
+
+# Simon React Phase 2: JavaScript Implementation
+
+## Overview
+This phase focuses on implementing JavaScript functionality for the Simon game using React, making the application interactive and functionally complete.
+
+## Key Components
+
+### About Component
+- Uses `useState` and `useEffect` hooks for managing state and side effects
+- Placeholder implementation for fetching random images and quotes
+- State variables: `imageUrl`, `quote`, and `quoteAuthor`
+
+### Play Component
+- Parent component for the game view
+- Composed of two child components: Players and SimonGame
+
+### Players Component
+- Listens for game notifier events using `useEffect`
+- Manages and displays events from other players
+
+### SimonGame Component
+- Implements core game logic
+- Key state variables:
+  - `allowPlayer`: Controls player interaction
+  - `sequence`: Current sequence to reproduce
+  - `playbackPos`: Current position in the sequence
+
+#### Game Logic Highlights
+- `onPressed` function:
+  - Checks if player interaction is allowed
+  - Validates button press against the sequence
+  - Increases sequence or ends game based on player performance
+- Implements game reset, score updates, and sequence generation
+
+### Scores Component
+- Reads scores from local storage
+- Displays scores in a table generated with JSX
+
+### Login Component
+- Uses child components to render different views based on authentication state
+- Implements "Lifting State Up" React pattern for managing auth state
+- Stores username in local storage for persistent login
+
+## React Patterns and Techniques
+- Use of hooks: `useState`, `useEffect`
+- Lifting State Up for sharing state between components
+- Conditional rendering based on state
+
+## Deployment
+- Uses a custom `deployReact.sh` script
+- Requires Vite package for bundling the React application
+- Deploys bundled static files to production environment
+
+## Best Practices
+- Commit and test incrementally
+- Use Git for version control
+- Debug frontend code in the browser
+
+## Code Structure
+- Separate files for different components (`about.jsx`, `play.jsx`, etc.)
+- Support files for game logic (`delay.js`, `gameNotifier.js`)
+
+## Future Enhancements
+- Implement actual fetch requests for images and quotes
+- Replace mock WebSocket messages with real-time player data
+- Enhance authentication with server-side token verification
+
+# Startup Service Notes
+
+## Backend Setup
+
+### Node.js and Express
+
+- Create `service/index.js` for backend
+- Use Express to create web service
+- Select port:
+  ```javascript
+  const port = process.argv.length > 2 ? process.argv[2] : 4000;
+  ```
+- Serve static files:
+  ```javascript
+  app.use(express.static('public'));
+  ```
+
+### Vite Configuration
+
+- Create `vite.config.js` in main directory:
+  ```javascript
+  import { defineConfig } from 'vite';
+
+  export default defineConfig({
+    server: {
+      proxy: {
+        '/api': 'http://localhost:4000',
+      },
+    },
+  });
+  ```
+
+## API Endpoints
+
+- Create new endpoints in `service/index.js`
+- Implement similar to Simon project
+- Use `fetch()` in frontend to call backend endpoints
+
+## Third-Party APIs
+
+- Integrate third-party service calls in frontend
+- Use `fetch()` for API requests
+
+## Debugging
+
+- Backend: Use VS Code's Node debugger on `service/index.js`
+- Frontend: Use browser's inspect dev tools
+- Run frontend with `npm run dev`
+
+## Deployment
+
+- Copy `deployService.sh` from Simon Service
+- Deploy to production environment:
+  ```bash
+  ./deployService.sh -k <yourpemkey> -h <yourdomain> -s startup
+  ```
+
+## Version Control
+
+- Commit and push code to GitHub regularly
+- Update `notes.md` in repository
+- Ensure sufficient commits to prove ownership
+
+# Startup Login Notes
+
+## Authentication and Authorization in Node.js
+
+### User Registration
+
+```markdown
+## User Registration
+- Create a registration form to collect user data
+- Hash and salt passwords before storing in the database
+- Use bcrypt for password hashing:
+  ```
+  const bcrypt = require('bcrypt');
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
+  ```
+- Store user data, including hashed password, in MongoDB
+```
+
+### User Login
+
+```markdown
+## User Login
+- Create a login form for users to provide credentials
+- Validate credentials against stored data in the database
+- Use bcrypt to compare provided password with stored hash:
+  ```
+  const passwordMatch = await bcrypt.compare(password, user.password);
+  ```
+- Create a session or generate a token for authenticated users
+```
+
+### User Logout
+
+```markdown
+## User Logout
+- Implement a logout functionality
+- Clear session data or invalidate tokens on logout
+```
+
+### Password Security
+
+```markdown
+## Password Security
+- Never store plain text passwords
+- Use strong hashing algorithms like bcrypt
+- Implement password strength requirements
+```
+
+### MongoDB Integration
+
+```markdown
+## MongoDB Integration
+- Install MongoDB driver: `npm install mongodb`
+- Connect to MongoDB:
+  ```
+  const { MongoClient } = require('mongodb');
+  const client = new MongoClient(uri);
+  await client.connect();
+  ```
+- Create, read, update, and delete (CRUD) operations on the database
+```
+
+### API Endpoints
+
+```markdown
+## API Endpoints
+- Implement RESTful API endpoints for data operations
+- Use Express.js for routing:
+  ```
+  app.post('/api/users', createUser);
+  app.get('/api/users/:id', getUser);
+  app.put('/api/users/:id', updateUser);
+  app.delete('/api/users/:id', deleteUser);
+  ```
+```
+
+### Authorization Middleware
+
+```markdown
+## Authorization Middleware
+- Create middleware to check user authentication status
+- Protect routes that require authentication:
+  ```
+  function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+      return next();
+    }
+    res.status(401).json({ error: 'Unauthorized' });
+  }
+  
+  app.get('/api/protected', isAuthenticated, protectedRoute);
+  ```
+```
+
+### Frontend Integration
+
+```markdown
+## Frontend Integration
+- Use fetch or Axios for API calls from frontend
+- Update DOM to reflect user authentication status
+- Implement login/logout UI components
+```
+
+### Error Handling
+
+```markdown
+## Error Handling
+- Implement proper error handling for authentication failures
+- Provide meaningful error messages to users
+- Log errors on the server for debugging
+```
+
+### Security Best Practices
+
+```markdown
+## Security Best Practices
+- Use HTTPS for all communications
+- Implement rate limiting to prevent brute-force attacks
+- Keep dependencies up-to-date
+- Regularly audit your code for security vulnerabilities
+```
+
+### Deployment
+
+```markdown
+## Deployment
+- Use `deployService.sh` script for deployment
+- Ensure MongoDB connection works in production environment
+- Set up proper environment variables for production
+```
+
+# WebSocket Implementation Notes
+
+## Backend Setup
+
+```markdown
+## Backend WebSocket Setup
+
+1. Install required dependencies:
+   ```
+   npm install ws
+   ```
+
+2. Create WebSocket server:
+   ```
+   const WebSocket = require('ws');
+   const wss = new WebSocket.Server({ server });
+   ```
+
+3. Handle new connections:
+   ```
+   wss.on('connection', (ws) => {
+     console.log('New client connected');
+     
+     ws.on('message', (message) => {
+       console.log('Received:', message);
+       // Handle incoming messages
+     });
+     
+     ws.on('close', () => {
+       console.log('Client disconnected');
+     });
+   });
+   ```
+
+4. Broadcast messages to all clients:
+   ```
+   wss.clients.forEach((client) => {
+     if (client.readyState === WebSocket.OPEN) {
+       client.send(JSON.stringify(data));
+     }
+   });
+   ```
+```
+
+## Frontend Setup
+
+```markdown
+## Frontend WebSocket Setup
+
+1. Create WebSocket connection:
+   ```
+   const socket = new WebSocket('ws://localhost:8080');
+   ```
+
+2. Handle connection open:
+   ```
+   socket.onopen = (event) => {
+     console.log('WebSocket connection established');
+   };
+   ```
+
+3. Handle incoming messages:
+   ```
+   socket.onmessage = (event) => {
+     const data = JSON.parse(event.data);
+     // Process and display the received data
+   };
+   ```
+
+4. Send messages to the server:
+   ```
+   socket.send(JSON.stringify(message));
+   ```
+
+5. Handle connection close:
+   ```
+   socket.onclose = (event) => {
+     console.log('WebSocket connection closed');
+   };
+   ```
+```
+
+## Integration with Application
+
+```markdown
+## Integrating WebSocket with Application
+
+1. Update UI elements in real-time based on received WebSocket messages.
+
+2. Trigger WebSocket messages on user interactions (e.g., button clicks, form submissions).
+
+3. Implement error handling and reconnection logic for WebSocket connections.
+
+4. Use appropriate data structures (e.g., JSON) for message formatting.
+
+5. Consider implementing a heartbeat mechanism to keep the connection alive.
+```
+
+## Deployment Considerations
+
+```markdown
+## Deployment Notes
+
+1. Update `vite.config.js` to proxy WebSocket requests during development:
+   ```
+   export default defineConfig({
+     server: {
+       proxy: {
+         '/ws': {
+           target: 'ws://localhost:8080',
+           ws: true,
+         },
+       },
+     },
+   });
+   ```
+
+2. Ensure proper WebSocket URL is used in production (wss:// for secure connections).
+
+3. Configure server to handle WebSocket upgrade requests.
+
+4. Test WebSocket functionality in both development and production environments.
+```
+
+## Best Practices
+
+```markdown
+## WebSocket Best Practices
+
+1. Implement proper error handling and logging for WebSocket connections.
+
+2. Use secure WebSocket connections (wss://) in production.
+
+3. Implement authentication and authorization for WebSocket connections.
+
+4. Optimize message size and frequency to reduce network load.
+
+5. Implement reconnection logic on the client-side to handle disconnections.
+
+6. Use appropriate data serialization methods (e.g., JSON) for message content.
+
+7. Consider implementing a messaging protocol for complex applications.
+
+8. Properly close WebSocket connections when they are no longer needed.
+```
+
+
+
+
+
+
