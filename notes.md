@@ -52,7 +52,7 @@
   - Switched to single-column layout specifaly grid-template-columns: 1fr;.  
   - Hiding the welcome box with display: none; for better mobile UX. I don't think it is that important anyways  
 
-**My key takeaways for my index.css**  
+**My key takeaways from my css**  
 - opacity: 0; is best for faed-in.  
 - z-index ensures proper layering of things like videos and overlays.  
 - animation-delay is great for making thigs not looked rushed.  
