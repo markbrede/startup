@@ -4,7 +4,7 @@
     max-width: 90%; /*keep pics from getting too big on small screens */
   }
 
-  nav menu {
+  nav ul {
     flex-direction: column; /* stack menu items vertically */
   }
 
@@ -51,7 +51,7 @@ header {
   }
   
   /* Home   Track   History   About */
-  nav menu {
+  nav ul {
     display: flex;
     justify-content: center; /* Puts the menu items in the middle */
     list-style: none; /* Takes away the dots next to list items */
@@ -63,12 +63,12 @@ header {
   }  
   
   /* Home   Track   History   About */
-  nav menu li {
+  nav ul li {
     margin: 0 15px; /* Adds space between menu items */
   }
   
   /* Home   Track   History   About */
-  nav menu li a {
+  nav ul li a {
     text-decoration: none; /* Takes away the underline */
     color: #e0e0e0; /* Makes the words light gray */
     font-weight: 300; /* Makes the words bold */
@@ -76,14 +76,14 @@ header {
   }
 
   /* This shows which page we're on */
-  nav menu li a.active {
+  nav ul li a.active {
     color: #ffffff; /* Makes the active page white */
     border-bottom: 2px solid #ffffff; /* Adds a line under the active page */
     pointer-events: none; /* Makes it so we can't click on the page we're already on */
 }
 
   /* This changes the color when we hover over a menu item */
-  nav menu li a:hover {
+  nav ul li a:hover {
     color: #a0a0a0; 
   }
 
