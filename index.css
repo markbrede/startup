@@ -70,7 +70,6 @@ header::before {
     animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
 }
 
-
 /* -----------------------------------CREATE ACCOUNT (right box)----------------------------------- */
 .form-box {
     background-color: rgba(44, 44, 44, 0.8); /*black with transparency */
@@ -133,7 +132,12 @@ form div:last-of-type {
     animation-delay: .9s; 
     opacity: 0;
 }
-
+/* -----------------------------------ADAPTIVE WEBSITE SIZING----------------------------------- */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
 /* MAIN GRID */
 .grid-container {
     display: grid;
@@ -144,14 +148,8 @@ form div:last-of-type {
     align-items: center;
     min-height: 65vh; /* Make the container cover the full viewport height */
 }
-/* ADAPTIVE WEBSITE SIZING */
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-}
 /*hide welcome box on small screen*/
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr; /* Switch to single column */
     }

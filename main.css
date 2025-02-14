@@ -3,22 +3,17 @@
   #picture {
     max-width: 90%; /*keep pics from getting too big on small screens */
   }
-
   nav ul {
     flex-direction: column; /* stack menu items vertically */
   }
-
   header, footer {
     padding: 10px; /*reduce padding in header and footer */
   }
-
   main {
     padding: 15px; /* adjust padding in main content area */
   }
 }
 /*--------------------------------------------------------------HEADER--------------------------------------------------------------*/
-
-
 header {
     flex: 0 80px; /*header size */
     text-align: center; /*center title (Auto Expense Tracker)*/
@@ -28,7 +23,6 @@ header {
     background-position: center; /*centers the picture */
     position: relative; /*helps with the dark overlay */
   }
-  
   /*framing up a tint to cover the image (help my txt visibility)*/
   header::before {
     content: "";
@@ -40,7 +34,6 @@ header {
     background-color: rgba(32, 32, 32, 0.8); /*make header img darker to help with txt visablility*/
     z-index: 1; /* tint goes on top of the image */
   }
-  
   /* Auto Expense Tracker*/
   header h1 {
     position: relative;
@@ -49,7 +42,6 @@ header {
     font-weight: 270; /*thickness of the font */
     z-index: 2; /* Makes sure the words are on top of the dark layer */
   }
-  
   /* Home   Track   History   About */
   nav ul {
     display: flex;
@@ -61,12 +53,10 @@ header {
     font-size: .8em; /* Makes the words bigger */
     z-index: 2; /* Makes sure the menu is on top of the dark layer */
   }  
-  
   /* Home   Track   History   About */
   nav ul li {
     margin: 0 15px; /* Adds space between menu items */
   }
-  
   /* Home   Track   History   About */
   nav ul li a {
     text-decoration: none; /* Takes away the underline */
@@ -74,23 +64,17 @@ header {
     font-weight: 300; /* Makes the words bold */
     transition: color 0.3s ease-in-out; /* Makes the color change smoothly */
   }
-
   /* This shows which page we're on */
   nav ul li a.active {
     color: #ffffff; /* Makes the active page white */
     border-bottom: 2px solid #ffffff; /* Adds a line under the active page */
     pointer-events: none; /* Makes it so we can't click on the page we're already on */
 }
-
   /* This changes the color when we hover over a menu item */
   nav ul li a:hover {
     color: #a0a0a0; 
   }
-
-
 /*--------------------------------------------------------------BODY--------------------------------------------------------------*/
-
-
 body {
   display: flex;
   flex-direction: column; /*stack on top of each other */
@@ -106,10 +90,7 @@ body {
   height: 100vh; /* Matches the height of the video */
   background-color: rgba(25, 25, 25, 0.99);
 }
-
-
 /*--------------------------------------------------------------MAIN--------------------------------------------------------------*/
-
   /* box surrounding inputs*/
   main {
     flex: 1;
@@ -124,11 +105,6 @@ body {
     max-width: 800px;
     margin: 20px auto; /*center the box and adds space above and below */
   }
-  
-
-
-
-
   /*for tables in the box*/
   table {
     width: 100%;
@@ -150,10 +126,6 @@ body {
   tr:nth-child(even) {
     background-color: #242424;
   }
-  
-
-
-
 
   /*click buttons*/
   button {
@@ -167,12 +139,10 @@ body {
     font-weight: bold;
     transition: background-color 0.3s ease-in-out; /* Makes the color change smoothly */
   }
-  
   /* This changes the button color when we hover over it */
   button:hover {
-    background-color: #555555;
+    background-color: #200994;
   }
-  
   /* This is how text boxes look */
   input[type="text"],
   input[type="number"],
@@ -186,17 +156,13 @@ body {
     background-color: #333333;
     color: #e0e0e0;
   }
-  
   /* make input txt lighter*/
   input::placeholder {
     color: #a0a0a0;
   }
 
-
 /*--------------------------------------------------------------FOOTER--------------------------------------------------------------*/
-
-
-  footer {
+footer {
     flex-shrink: 1;
     text-align: center;
     padding: 20px 0;
@@ -221,8 +187,6 @@ body {
   footer a:hover {
     color: #3f86ff;
   }
-  
-  
   /*hides the header and footer on short screens */
   @media (max-height: 600px) {
     header, footer {
@@ -232,20 +196,3 @@ body {
       flex: 1 100vh; /* Makes main part take up whole screen */
     }
   }
-  
-
-
-/*
-  html, body {
-    height: 100%; /* Ensures body takes up the full height of the viewport 
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1; /* Allows main to grow and push footer to bottom 
-}
-
-footer {
-    flex-shrink: 0; /* Keeps footer at the bottom of the page 
-}
