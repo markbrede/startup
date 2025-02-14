@@ -17,30 +17,6 @@
   }
 
 
-
-
-/*fade in animation */
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/*slide in animation from the top 
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}*/
-
 /*fade from left to right animation*/
 @keyframes fadeInLeftToRight {
     0% {
@@ -56,8 +32,23 @@
 
 
 
-/*WELCOME BOX */
-/*Welcome*/
+
+/* -----------------------------------WELCOME (left box)----------------------------------- */
+.welcome-box {
+    color: #e0e0e0;
+    text-align: left;
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: 40px;
+    background-color: none;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /*aligns content to the top */
+    align-items: flex-start;
+    height: 100%; /*uses the full height of the grid box */
+}
+/*WELCOME txt */
 .welcome-container {
     text-align: left;
     font-size: 2em; /* adjust text size size */
@@ -68,7 +59,7 @@
     line-height: 1.2; /* Adjusts space between lines */
     animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
 }
-/*to your digital garage*/
+/*TO YOUR DIGITAL GARAGE txt*/
 .subtitle {
     font-size: .9em; /* adjust text size size */
     font-weight: 270; /* removing bold txt */
@@ -77,74 +68,67 @@
     animation-delay: .2s; /* Delay fade-in to start after "Welcome" */
 }
 
-.text-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 10vh; /*adjust spacing on text-container */
+
+/* -----------------------------------CREATE ACCOUNT (right box)----------------------------------- */
+.form-box {
+    background-color: rgba(44, 44, 44, 0.8); /*black with transparency */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
-
-
-
-
-
-/*FADE in LEFT TO RIGHT DECENDING: Sign in stuff*/
-
-/*Create Account or Sign in*/
+/* POSITION txt, input boxes, and buttons PROPERLY IN right box */
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /*adjust spacing on text-container */
+  }
+/*CREATE ACCOUNT OR SIGN IN txt*/
 .typing-text {
     font-family: inherit;
     font-size: 1.2em; /* Match font size */
     font-weight: 500;
     opacity: 0; /* Initial transparency for animation */
-    animation: fadeInLeftToRight 1s ease-out forwards;
+    animation: fadeInLeftToRight 1s ease forwards;
     animation-delay: .9s;
 }
-
-/*username*/
+/* USERNAME input box */
 form div:nth-child(1) {
     font-size: .9em; /* Match font size */
     font-weight: 400; /* Make text bold */
-    animation: fade-in 0.8s ease forwards;
-    animation-delay: 1.9s; 
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: .9s; 
     opacity: 0;
 }
-
-
-/*password*/
+/* PASSWORD input box */
 form div:nth-child(2) {
     font-size: .9em; /* Match font size */
     font-weight: 400; /* Make text bold */
-    animation: fade-in 0.8s ease forwards;
-    animation-delay: 2.1s;
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: .9s;
     opacity: 0;
 }
-
-
-/*login button */
+/* LOGIN button */
 form button:nth-of-type(1) {
     font-size: .9em; /* Match font size */
     font-weight: 600; /* Make text bold */
-    animation: fade-in 0.8s ease forwards;
-    animation-delay: 2.3s; 
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: .9s; 
     opacity: 0;
 }
-
-
-/*create acc button */
+/* CREATE ACCOUNT button */
 form button:nth-of-type(2) {
     font-size: .9em; /* Match font size */
     font-weight: 600; /* Make text bold */
-    animation: fade-in 0.8s ease forwards;
-    animation-delay: 2.5s; 
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: .9s; 
     opacity: 0;
 }
-
-
-/* placeholder text so it doesn't look out of place*/
+/* AUTHENTICATION txt */
 form div:last-of-type {
-    animation: fade-in 0.8s ease forwards;
-    animation-delay: 2.7s; 
+    animation: fadeInLeftToRight 1s ease forwards;
+    animation-delay: .9s; 
     opacity: 0;
 }
 
@@ -152,7 +136,7 @@ form div:last-of-type {
 
 
 
-/* FULL-SCREEN VID */
+/* BACKGROUND VIDEO */
 .background-video {
     position: absolute;
     top: 0;
@@ -168,7 +152,7 @@ form div:last-of-type {
 
 
 
-/*MAIN GRID*/
+/* MAIN GRID */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -179,32 +163,18 @@ form div:last-of-type {
     min-height: 65vh; /* Make the container cover the full viewport height */
 }
 
-/* LEFT WELCOME BOX */
-.welcome-box {
-    color: #e0e0e0;
-    text-align: left;
-    font-size: 1.7em;
-    font-weight: bold;
-    padding: 40px;
-    background-color: none;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /*aligns content to the top */
-    align-items: flex-start;
-    height: 100%; /*uses the full height of the grid box */
-}
 
 
-/* Sign-in box styling (right side) */
-.form-box {
-    background-color: rgba(44, 44, 44, 0.8); /*black with transparency */
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
-}
 
-/* Responsive adjustments */
+
+
+
+
+
+
+
+
+/* ADAPTIVE WEBSITE SIZING */
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;
