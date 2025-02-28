@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 1vh;
     padding: 20px;
 }
 
@@ -26,6 +26,7 @@
     max-width: 1200px;
     width: 100%;
     z-index: 1;
+    align-items: start; /* Add this line */
 }
 
 .welcome-box {
@@ -33,29 +34,33 @@
     text-align: left;
     font-size: 1.7em;
     font-weight: bold;
-    padding: 40px;
-    background-color: rgba(44, 44, 44, 0.8);
+    padding: 20px 40px; /* Reduced top padding */
+    background-color: rgba(44, 44, 44, 0);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
+    justify-content: flex-start; /* Align content to the top */
 }
+
 
 .welcome-container {
     font-size: 2em;
     font-weight: 400;
-    margin-bottom: 10px;
+    margin: 0; /* Remove any default margins */
+    line-height: 1.2; /* Adjust line height for tighter spacing */
 }
 
 .subtitle {
     font-size: 0.9em;
     font-weight: 270;
+    margin-top: 5px; /* Small gap between welcome and subtitle */
+    line-height: 1.2;
 }
 
 .form-box {
-    background-color: rgba(44, 44, 44, 0.8);
-    padding: 40px;
+    background-color: rgba(44, 44, 44, 0.9);
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
