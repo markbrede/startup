@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 
-import { Login } from './login/Login';
+import { Login } from './login/login';
 import { Track } from './track/Track';
 import { History } from './history/History';
 import { About } from './about/About';
@@ -17,13 +17,11 @@ function App() {
 
   return (
     <div className="app-container">
-      {/* Background Video - only shown on login page */}
-      {isLoginPage && (
-        <video autoPlay loop muted className="background-video">
-          <source src="/CarVid.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
+      {/* Background Video */}
+      <video autoPlay loop muted className="background-video">
+        <source src="/CarVid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* Main Content Overlay */}
       <div className="content-overlay">
