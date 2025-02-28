@@ -1,24 +1,80 @@
-/* frames for animation */
-@keyframes fadeIn {
-    from { 
-        opacity: 100;
-        transform: translateY(-20px);
-    }
-    to { 
-        opacity: 100;
-        transform: translateY(0);
-    }
-}
-
-/*fade in effect for the main content */
-main {
-    animation: fadeIn .5s ease-out;
-    font-size: 5;
-    font-weight: 1;
-}
-
-.track-title {
+.track-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .track-title {
     font-weight: 400;
     font-size: 2rem;
     margin-bottom: 20px;
-}
+    text-align: center;
+  }
+  
+  /* Fade-in effect for the main content */
+  @keyframes fadeIn {
+    from { 
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to { 
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+  }
+  
+  /* Form styling */
+  form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3f86ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2a5cb8;
+  }
+  
+  /* Placeholder styling */
+  .track-content > div {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+  }
+  

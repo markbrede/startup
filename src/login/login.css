@@ -25,6 +25,7 @@
     gap: 50px;
     max-width: 1200px;
     width: 100%;
+    z-index: 1;
 }
 
 .welcome-box {
@@ -44,17 +45,12 @@
 .welcome-container {
     font-size: 2em;
     font-weight: 400;
-    animation: fadeInLeftToRight 1s ease forwards;
-    opacity: 0;
     margin-bottom: 10px;
 }
 
 .subtitle {
     font-size: 0.9em;
     font-weight: 270;
-    opacity: 0;
-    animation: fadeInLeftToRight 1s ease forwards;
-    animation-delay: 0.2s;
 }
 
 .form-box {
@@ -67,17 +63,30 @@
 .typing-text {
     font-size: 1.2em;
     font-weight: 500;
-    opacity: 0;
-    animation: fadeInLeftToRight 1s ease forwards;
-    animation-delay: 0.9s;
     margin-bottom: 20px;
 }
 
-.form-box form > * {
+.form-group {
     margin-bottom: 15px;
-    opacity: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+.fade-in {
     animation: fadeInLeftToRight 1s ease forwards;
-    animation-delay: 0.9s;
+    opacity: 0;
 }
 
 /* Responsive design */
