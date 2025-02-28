@@ -1,24 +1,52 @@
-/* frames for animation */
-@keyframes fadeIn {
-    from { 
-        opacity: 100;
-        transform: translateY(-20px);
-    }
-    to { 
-        opacity: 100;
-        transform: translateY(0);
-    }
-}
-
-/*fade in effect for the main content */
-main {
-    animation: fadeIn .5s ease-out;
-    font-size: 2;
-    font-weight: 300;
-}
-
-.track-title {
+.history-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .track-title {
     font-weight: 400;
     font-size: 2rem;
     margin-bottom: 20px;
-}
+    text-align: center;
+  }
+  
+  /* Fade-in effect for the main content */
+  @keyframes fadeIn {
+      from { 
+          opacity: 0; /* Changed from 100 to 0 for proper fade-in */
+          transform: translateY(-20px);
+      }
+      to { 
+          opacity: 1; /* Changed from 100 to 1 for proper fade-in */
+          transform: translateY(0);
+      }
+  }
+  
+  /* Table styling */
+  table {
+      width: 100%;
+      border-collapse: collapse; /* Ensures borders are merged */
+      margin-top: 20px; /* Adds space above the table */
+  }
+  
+  th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444; /* Adds a bottom border to table rows */
+  }
+  
+  th {
+      background-color: rgba(32, 32, 32, 0.8); /* Header background */
+      color: #e0e0e0; /* Header text color */
+  }
+  
+  tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.1); /* Highlight row on hover */
+  }
+  
+  /* Fade effect for elements */
+  .fade-in {
+      animation: fadeIn .5s ease-out forwards;
+      opacity: 0; /* Start invisible for fade-in effect */
+  }
+  
