@@ -1,198 +1,114 @@
-/* Adjusts for small screens */
-@media (max-width: 600px) {
-  #picture {
-    max-width: 90%; /*keep pics from getting too big on small screens */
-  }
-  nav ul {
-    flex-direction: column; /* stack menu items vertically */
-  }
-  header, footer {
-    padding: 10px; /*reduce padding in header and footer */
-  }
-  main {
-    padding: 15px; /* adjust padding in main content area */
-  }
-}
-/*--------------------------------------------------------------HEADER--------------------------------------------------------------*/
-header {
-    flex: 0 80px; /*header size */
-    text-align: center; /*center title (Auto Expense Tracker)*/
-    color: #e0e0e0; /* Title color*/
-    padding: 15px 0; /* header spacing*/
-    background-size: cover; /*Makes the header image take up all the space*/
-    background-position: center; /*centers the picture */
-    position: relative; /*helps with the dark overlay */
-  }
-  /*framing up a tint to cover the image (help my txt visibility)*/
-  header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(32, 32, 32, 0.8); /*make header img darker to help with txt visablility*/
-    z-index: 1; /* tint goes on top of the image */
-  }
-  /* Auto Expense Tracker*/
-  header h1 {
-    position: relative;
-    font-size: 2em; /* Makes the words bigger */
-    margin: 0;
-    font-weight: 270; /*thickness of the font */
-    z-index: 2; /* Makes sure the words are on top of the dark layer */
-  }
-  /* Home   Track   History   About */
-  nav ul {
-    display: flex;
-    justify-content: center; /* Puts the menu items in the middle */
-    list-style: none; /* Takes away the dots next to list items */
-    padding: 10px 0;
-    margin: 0;
-    position: relative;
-    font-size: .8em; /* Makes the words bigger */
-    z-index: 2; /* Makes sure the menu is on top of the dark layer */
-  }  
-  /* Home   Track   History   About */
-  nav ul li {
-    margin: 0 15px; /* Adds space between menu items */
-  }
-  /* Home   Track   History   About */
-  nav ul li a {
-    text-decoration: none; /* Takes away the underline */
-    color: #e0e0e0; /* Makes the words light gray */
-    font-weight: 300; /* Makes the words bold */
-    transition: color 0.3s ease-in-out; /* Makes the color change smoothly */
-  }
-  /* This shows which page we're on */
-  nav ul li a.active {
-    color: #ffffff; /* Makes the active page white */
-    border-bottom: 2px solid #ffffff; /* Adds a line under the active page */
-    pointer-events: none; /* Makes it so we can't click on the page we're already on */
-}
-  /* This changes the color when we hover over a menu item */
-  nav ul li a:hover {
-    color: #a0a0a0; 
-  }
-/*--------------------------------------------------------------BODY--------------------------------------------------------------*/
-body {
-  display: flex;
-  flex-direction: column; /*stack on top of each other */
-  min-width: 375px; /*page isn't too skinny */
-  font-family: 'Montserrat', sans-serif;
-  color: #e0e0e0; /*words light gray */
-  background-image: url('GTR.jpeg');
-  background-size: cover; /* This ensures the image covers the full viewport */
-  background-position: center; /* Centers the image to align with the video */
+body, html {
   margin: 0;
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Matches the height of the video */
-  background-color: rgba(25, 25, 25, 0.99);
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100%;
 }
-/*--------------------------------------------------------------MAIN--------------------------------------------------------------*/
-  /* box surrounding inputs*/
-  main {
-    flex: 1;
-    padding: 30px; /*make box bigger */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('GTR.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #e0e0e0;
+}
+
+header {
+  background-color: rgba(32, 32, 32, 0.9);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #e0e0e0;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: rgba(44, 44, 44, 0.8);
+  margin: 1rem;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: rgba(32, 32, 32, 0.9);
+  padding: 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: #3f86ff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  nav {
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers txt inside box */
-    justify-content: flex-start; /*starts content at the top */
-    background-color: rgba(44, 44, 44, 0.9); /* Makes the background a bit lighter than the body */
-    border-radius: 8px; /*rounds the corners */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    max-width: 800px;
-    margin: 20px auto; /*center the box and adds space above and below */
-  }
-  /*for tables in the box*/
-  table {
-    width: 100%;
-    border-collapse: collapse; /* get the borders to contact each other */
-    margin-top: 20px;
-  }
-  /*table borders*/
-  table, th, td {
-    border: 1px solid #444444;
-    padding: 10px;
-  }
-  /*top row of the table */
-  th {
-    background-color: #3b3b3b; /* Makes the headers a bit darker */
-    color: #e0e0e0; /* txt in the top row of the table*/
-    font-weight: bold;
-  }
-  /*every other row a different color */
-  tr:nth-child(even) {
-    background-color: #242424;
   }
 
-  /*click buttons*/
-  button {
-    background-color: #2e59b4; /* Makes buttons blue */
-    color: #e0e0e0;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px; /* Rounds the corners */
-    cursor: pointer; /* Changes the mouse to a pointing hand */
-    font-size: 1em;
-    font-weight: bold;
-    transition: background-color 0.3s ease-in-out; /* Makes the color change smoothly */
+  nav a {
+    margin: 5px 0;
   }
-  /* This changes the button color when we hover over it */
-  button:hover {
-    background-color: #200994;
-  }
-  /* This is how text boxes look */
-  input[type="text"],
-  input[type="number"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    border: 1px solid #444444;
-    border-radius: 4px; /* Rounds the corners */
-    background-color: #333333;
-    color: #e0e0e0;
-  }
-  /* make input txt lighter*/
-  input::placeholder {
-    color: #a0a0a0;
-  }
+}
 
-/*--------------------------------------------------------------FOOTER--------------------------------------------------------------*/
-footer {
-    flex-shrink: 1;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #232323; /*footer color*/
-    color: #e0e0e0;
-    border-top: 1px solid #131313; /*line at top of footer (kinda like shadowing)*/
-  }
-  /*words and links in the footer */
-  footer span,
-  footer a {
-    color: #e0e0e0;
-  }
-  /*links in the footer */
-  footer a {
-    font-size: 1em;
-    font-weight: 300;
-    text-decoration: none; /*takes away the default link underline */
-    margin-left: 10px;
-    transition: color 0.3s ease-in-out;
-  }
-  /*hover color change for footer link */
-  footer a:hover {
-    color: #3f86ff;
-  }
-  /*hides the header and footer on short screens */
-  @media (max-height: 600px) {
-    header, footer {
-      display: none;
-    }
-    main {
-      flex: 1 100vh; /* Makes main part take up whole screen */
-    }
-  }
+/* Ensure content is visible */
+.app-container > * {
+  z-index: 1;
+}
+
+/* Additional styles for form elements */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3f86ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #2a5cb8;
+}
