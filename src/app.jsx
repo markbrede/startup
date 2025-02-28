@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 
-import { Login } from './login/Login';
+import { Login } from './login/login';
 import { Track } from './track/Track';
 import { History } from './history/History';
 import { About } from './about/About';
@@ -12,6 +12,9 @@ function NotFound() {
 }
 
 function App() {
+  const location = useLocation();
+  const isLoginPage = location.pathname === '/';
+
   return (
     <div className="app-container">
       {/* Background Video */}
@@ -33,7 +36,7 @@ function App() {
         </header>
 
         <main>
-          <div className="main-content">
+          <div className={`main-content ${isLoginPage ? 'transparent' : ''}`}>
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/track" element={<Track />} />
