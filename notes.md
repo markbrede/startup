@@ -56,6 +56,42 @@
 - opacity: 0; is best for faed-in.  
 - z-index ensures proper layering of things like videos and overlays.  
 - animation-delay is great for making thigs not looked rushed.  
-- @media adjust layouts dynamically for different screen sizes.  
+- @media adjust layouts dynamically for different screen sizes.
+
+## Mar 03 2025 - React Part-One for Startup.AutoExpenseTracker.click  
+**Converting to React & Vite**  
+- Transformed **AutoExpenseTracker** from a multi-page to a **single-page application (SPA)**.  
+- Used **Vite** as the build tool for faster development and optimized production builds.  
+- Modularized code into **React components**, improving maintainability.  
+
+**React Components & JSX**  
+- Created **functional components** for each major section (e.g., Login, Dashboard, Reports).  
+- Converted **HTML to JSX**, replacing `class` with `className` for React compatibility.  
+- Implemented **component-specific CSS** by importing stylesheets directly into component files.  
+
+**React Router**  
+- Set up **React Router** for navigation between components without page reloads.  
+- Replaced `<a>` tags with **`<NavLink>`** for internal navigation, improving SPA functionality.  
+- Defined routes and handled **404 errors** with a catch-all route.  
+
+**State Management & Props**  
+- Started thinking about **state management** for user data and expense tracking.  
+- Practiced **passing data** between components using **props**.  
+
+**Bootstrap to React-Bootstrap**  
+- Converted **Bootstrap components** to **React-Bootstrap** for better integration with React.  
+- Imported and used **React-Bootstrap components** like **Button** and **Modal**.  
+
+**Project Structure**  
+- Reorganized project structure to fit **React/Vite conventions**:  
+  - `public/` for static assets  
+  - `src/` for React components and application logic  
+  - Component-specific folders for better organization  
+
+**Build & Deployment**  
+- Created a new **deployment script** (`deployReact.sh`) for building and deploying the React app.  
+- Used `npm run build` to create **production-ready bundles**.
+
+
 
 
