@@ -33,8 +33,10 @@
   text-align: justify;
 }
 
+
 .quote-section p {
   text-align: right;
+  margin-top: -10px; /*adjust the space above the quote section */
 }
 
 .about-content a {

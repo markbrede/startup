@@ -24,9 +24,10 @@ export function About() {
       </div>
 
       <div className="quote-section fade-in">
-        <p className="quote">{quote}</p>
+        <p className="quote">&ldquo;{quote}&rdquo;</p> {/*google suggested "&ldquo" to add quotation marks*/}
         <p className="author"><strong>Author:</strong> {quoteAuthor}</p>
       </div>
+
 
       <h2 className="fade-in">What Makes us Different?</h2>
       <p className="fade-in">
