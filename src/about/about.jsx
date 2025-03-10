@@ -1,24 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './about.css';
 
 export function About() {
+  const [imageUrl, setImageUrl] = useState('business.jpeg');
+  const [quote, setQuote] = useState('Loading...');
+  const [quoteAuthor, setQuoteAuthor] = useState('unknown');
+
   useEffect(() => {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
     });
+    // For now, set placeholder values. Later, you can fetch these from an API.
+    setImageUrl('business.jpeg');
+    setQuote('Price is what you pay; value is what you get');
+    setQuoteAuthor('Warren Buffett');
   }, []);
 
   return (
     <div className="about-content">
       <div id="picture" className="picture-box fade-in">
-        <img src="business.jpeg" alt="Picture of crazy confident business-men." />
+        <img src={imageUrl} alt="Picture of crazy confident business-men." />
       </div>
 
       <h2 className="fade-in">A Little About Us</h2>
       <p className="fade-in">
-        By 150,000 miles, the additional cost of owning and maintaining a vehicle typically equals the vehicle's price when new. This is due to consistent expenses like fuel, insurance, and maintenance.
-        By 250,000 miles, these costs can triple the original purchase price. Auto Expense Tracker helps you manage your vehicle expenses effectively. Keep track of your fuel, insurance, and maintenance costs to understand your vehicle's total cost of ownership.
+        {quote}
+      </p>
+
+      <p className="fade-in">
+        <strong>Author:</strong> {quoteAuthor}
       </p>
 
       <h2 className="fade-in">What Makes us Different?</h2>
