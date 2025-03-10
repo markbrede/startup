@@ -11,8 +11,8 @@ export function About() {
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
     });
-    // For now, set placeholder values. Later, you can fetch these from an API.
-    setImageUrl('business.jpeg');
+    //Like in Simon, I am setting placeholder values. Later on, I will fetch these from an API
+    setImageUrl('warren-buffett.jpeg');
     setQuote('Price is what you pay; value is what you get');
     setQuoteAuthor('Warren Buffett');
   }, []);
@@ -23,14 +23,10 @@ export function About() {
         <img src={imageUrl} alt="Picture of crazy confident business-men." />
       </div>
 
-      <h2 className="fade-in">A Little About Us</h2>
-      <p className="fade-in">
-        {quote}
-      </p>
-
-      <p className="fade-in">
-        <strong>Author:</strong> {quoteAuthor}
-      </p>
+      <div className="quote-section fade-in">
+        <p className="quote">{quote}</p>
+        <p className="author"><strong>Author:</strong> {quoteAuthor}</p>
+      </div>
 
       <h2 className="fade-in">What Makes us Different?</h2>
       <p className="fade-in">
