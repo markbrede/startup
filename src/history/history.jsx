@@ -41,7 +41,7 @@ export function History() {
         </tbody>
       </table>
       <div className="fade-in">
-        <p>Websocket for real time expenses catagorized as gas/fuel/petrol. Will be implemeted for next phase</p>
+        <p>Websocket for real time expenses catagorized as gas/fuel/petrol. Will be implemeted in next phase</p>
       </div>
     </div>
   );
