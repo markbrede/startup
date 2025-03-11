@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-/* Fade-in effect for the main content */
+/*fade-in applied to main content */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -27,7 +27,7 @@
   opacity: 0;
 }
 
-/* Form styling */
+/*styling applied to form */
 form {
   background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -70,7 +70,7 @@ button[type="submit"]:hover {
   background-color: #2a5cb8;
 }
 
-/* Placeholder styling */
+/*styling for the placeholders*/
 .track-content > div {
   margin-top: 20px;
   padding: 15px;

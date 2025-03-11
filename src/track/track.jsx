@@ -55,7 +55,7 @@ export function Track() {
 
       {/* Guidance on how to test*/}
       <div className="fade-in">
-        <p>Hi TAs! To test the ExpenseList, Chart Visual, and the ExpenseForm, please enter a vehicle's make and model, choose an expense type, and enter the dollar amount of the expense.</p>
+        <p>Hi TAs! To test my ExpenseList, Chart Visual, and the ExpenseForm files, please enter a vehicle's make and model, choose an expense type, and enter the dollar amount of the expense.</p>
       </div>
 
       {/*user inputs are now handeled through the the ExpenseForm.jsx I made*/}

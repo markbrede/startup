@@ -1,12 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './history.css';
 
 export function History() {
+  const [expenses, setExpenses] = useState([]); //local storage
+
   useEffect(() => {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
     });
+
+    //simply loads expenses from local storage
+    const storedExpenses = localStorage.getItem('expenses');
+    if (storedExpenses) {
+      setExpenses(JSON.parse(storedExpenses));
+    }
   }, []);
 
   return (
@@ -22,16 +30,18 @@ export function History() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><small>YYYY-MM-DD</small></td>
-            <td><small>Make & Model</small></td>
-            <td><small>Expense Type</small></td>
-            <td><small>Amount</small></td>
-          </tr>                
+          {expenses.map((expense, index) => (
+            <tr key={index}>
+              <td><small>{expense.date}</small></td>
+              <td><small>{expense.vehicle}</small></td>
+              <td><small>{expense.expenseType}</small></td>
+              <td><small>${expense.amount}</small></td>
+            </tr>
+          ))}
         </tbody>
       </table>
       <div className="fade-in">
-        <p>Placeholder for websocket. Realtime updates</p>
+        <p>Websocket for real time expenses catagorized as gas/fuel/petrol. Will be implemeted for next phase</p>
       </div>
     </div>
   );
