@@ -42,10 +42,6 @@ export function About() {
         These are questions that can only be answered with the hard facts; your current cost per mile. 
         AutoExpenseTracker will allow you to confidently make that decision.
       </p>
-
-      <div className="fade-in">
-        <p><strong>Placeholder for possible mapping services if I decide it is relevant</strong></p>
-      </div>
     </div>
   );
 }
