@@ -5,10 +5,10 @@ import './login.css';
 export function Login({ userName, authState, onAuthChange }) {
   const [localUserName, setLocalUserName] = useState(userName || '');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // the nav hook lets us move between pages easily
+  const navigate = useNavigate(); //nav hook for pages
 
   useEffect(() => {
-    // adds a small delay effect to fade-in elements so they don't all pop in at once
+    //adds a small delay effect to fadein elements so they don't all pop in at once
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
@@ -17,13 +17,13 @@ export function Login({ userName, authState, onAuthChange }) {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    localStorage.setItem('userName', localUserName); // store username so we remember it on refresh
-    onAuthChange(localUserName, 'Authenticated'); // tell the parent component the user is now logged in
+    localStorage.setItem('userName', localUserName); //store username
+    onAuthChange(localUserName, 'Authenticated'); //user knows they've been logged in
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('userName'); // clear stored username when logging out
-    onAuthChange('', 'Unauthenticated'); // update state to reflect logout
+    localStorage.removeItem('userName'); //clear when logging out
+    onAuthChange('', 'Unauthenticated'); //update logout
   };
 
   return (
@@ -37,10 +37,10 @@ export function Login({ userName, authState, onAuthChange }) {
         <div className="form-box fade-in">
           {authState === 'Authenticated' ? (
             <div>
-              {/* friendly welcome message when logged in */}
+              {/*friendly dialog */}
               <p>🤠 Howdy, {localUserName}! Click below to start tracking your expenses or sign out if needed.</p>
-              <button onClick={() => navigate('/track')}>Track</button> {/* goes to tracking page */}
-              <button onClick={handleLogout}>Logout</button> {/* logs out and resets state */}
+              <button onClick={() => navigate('/track')}>Track</button> {/* goes to expensetracking page */}
+              <button onClick={handleLogout}>Logout</button> {/*logout and reset status*/}
             </div>
           ) : (
             <form onSubmit={handleLogin}>
@@ -66,7 +66,7 @@ export function Login({ userName, authState, onAuthChange }) {
                 />
               </div>
 
-              <button type="submit">Login</button> {/* logs in and updates state */}
+              <button type="submit">Login</button> {/*logs in and updates state*/}
             </form>
           )}
         </div>
