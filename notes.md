@@ -58,6 +58,8 @@
 - animation-delay is great for making thigs not looked rushed.  
 - @media adjust layouts dynamically for different screen sizes.
 
+
+
 ## Mar 03 2025 - React Part-One for Startup.AutoExpenseTracker.click  
 **Converting to React & Vite**  
 - Transformed **AutoExpenseTracker** from a multi-page to a **single-page application (SPA)**.  
@@ -94,4 +96,46 @@
 
 
 
+## Mar 12, 2025 - State & Props  
+**Charts for Expense Data**  
+- Added a chart to show expense data in a visual way.  
+- Added chart.js to checkout interactive.  
+- Made sure it updates when new data is added.  
 
+**Expenses List & Form**  
+- The ExpenseList to show all the expenses.  
+- Made ExpenseForm so users can add new expenses.  
+- Uhooks to handle form input and submission.  
+
+**Random Quotes on About Page**  
+- Added a qutoe generator based off of simon to the About page.  
+- Will use hooks to grab random quotes and display them.  
+- Fun way to make the page more interesting. 
+
+
+**State Management Stuff**  
+- Messed around with useState, useEffecy, and useContext for managing data.  
+- Smodel global state for user login status and expense tracking.  
+
+**Handling Errors & User Feedback**  
+- Understanding what API errors will look like.  
+- Err messages.  
+
+## Mar 16, 2025 - React Stuff for Part 2  
+**Login & Auth Stuff**  
+- Made my component to check if users are logged in.  
+- Used state to keep track of whether someone is logged in or not.  
+- Made it so some pages can’t be accessed unless the user is logged in.  
+
+**CSS*  
+- Tweaked the layout to work better on different screen sizes.  
+- Used media queries and CSS variables for consistency.  
+
+**Deploying & Fixing Bugs**  
+- Pushed the app live using `deployReact.sh`.  
+- Used DevTools and console logs to find and fix bugs.  
+
+
+## Mar 17, 2025 - Testing & Optimizing  
+**Testinf & Debugging** 
+- Used console logs and DevTools to fix issues.
