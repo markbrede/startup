@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Auto Expense Tracker Service!');
+const port = process.argv.length > 2 ? process.argv[2] : 3000;
+
+app.get('*', (_req, res) => {
+  res.send({ msg: 'AutoExpenseTracker service' });
 });
 
-app.listen(3000, '0.0.0.0', () => {
-  console.log('Listening on port 3000');
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
-
