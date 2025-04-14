@@ -1,4 +1,4 @@
-/* FadeInLeftToRight animation */
+/* Animations */
 @keyframes fadeInLeftToRight {
     0% {
         opacity: 0;
@@ -10,7 +10,7 @@
     }
 }
 
-/* Login page specific styles */
+/* Login Styling */
 .login-page {
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@
     max-width: 1200px;
     width: 100%;
     z-index: 1;
-    align-items: start; /* Add this line */
+    align-items: start;
 }
 
 .welcome-box {
@@ -34,13 +34,13 @@
     text-align: left;
     font-size: 1.7em;
     font-weight: bold;
-    padding: 20px 40px; /* Reduced top padding */
+    padding: 20px 40px;
     background-color: rgba(44, 44, 44, 0);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start; /* Align content to the top */
+    justify-content: flex-start; /*Alight txt to top*/
 }
 
 
@@ -48,13 +48,13 @@
     font-size: 2em;
     font-weight: 400;
     margin: 0; /* Remove any default margins */
-    line-height: 1.2; /* Adjust line height for tighter spacing */
+    line-height: 1.2;
 }
 
 .subtitle {
     font-size: 0.9em;
     font-weight: 270;
-    margin-top: 5px; /* Small gap between welcome and subtitle */
+    margin-top: 5px; /*"welcome" + "to your..." gap*/
     line-height: 1.2;
 }
 
@@ -81,13 +81,11 @@
     margin-bottom: 5px;
 }
 
-
-
 button {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px; /* Adds space between buttons */
-    background-color: #3f86ff; /* Light blue */
+    margin-bottom: 10px; /*button spacing*/
+    background-color: #3f86ff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -97,9 +95,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #0056b3;
 }
-
 
 .form-group input {
     width: 100%;
@@ -115,7 +112,14 @@ button:hover {
     opacity: 0;
 }
 
-/* Responsive design */
+.error-message {
+    color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.1);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
 @media (max-width: 800px) {
     .grid-container {
         grid-template-columns: 1fr;
