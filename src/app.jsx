@@ -3,8 +3,8 @@ import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import { Login } from './login/login';
 import { Track } from './track/track';
-import { History } from './history/History';
-import { About } from './about/About';
+import { History } from './history/history';
+import { About } from './about/about';
 
 function NotFound() {
   return <h1>404: Page not found</h1>;
