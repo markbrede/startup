@@ -5,26 +5,61 @@ import './login.css';
 export function Login({ userName, authState, onAuthChange }) {
   const [localUserName, setLocalUserName] = useState(userName || '');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [isCreateAccount, setIsCreateAccount] = useState(false);
   const navigate = useNavigate(); //nav hook for pages
 
   useEffect(() => {
-    //adds a small delay effect to fadein elements so they don't all pop in at once
+//adds a small delay effect to fadein elements so they don't all pop in at once
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
     });
   }, []);
 
-  const handleLogin = (e) => {
+//authToken with login
+  const handleAuth = async (e) => {
     e.preventDefault();
-    localStorage.setItem('userName', localUserName); //store username
-    onAuthChange(localUserName, 'Authenticated'); //user knows they've been logged in
+    setMessage('');
+    
+    const endpoint = isCreateAccount ? '/api/auth/create' : '/api/auth/login';
+    
+    try {
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userName: localUserName, password })
+      });
+      
+      if (!response.ok) {
+        const body = await response.json();
+        throw new Error(body.msg || 'Authentication failed');
+      }
+      
+      const body = await response.json();
+      onAuthChange(body.userName, 'Authenticated');
+      setPassword('');
+    } catch (error) {
+      setMessage(error.message);
+    }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('userName'); //clear when logging out
-    onAuthChange('', 'Unauthenticated'); //update logout
-  };
+//logout 
+  const handleLogout = async () => {
+    try {
+      const response = await fetch('/api/auth/logout', { method: 'DELETE' });
+      const data = await response.json(); //always parse JSON
+      
+      if (!response.ok) {
+        throw new Error(data.msg || 'Logout failed');
+      }
+      
+      onAuthChange('', 'Unauthenticated');
+      setPassword('');
+    } catch (error) {
+      setMessage(error.message || 'Failed to logout');
+    }
+  };  
 
   return (
     <div className="login-page">
@@ -37,13 +72,13 @@ export function Login({ userName, authState, onAuthChange }) {
         <div className="form-box fade-in">
           {authState === 'Authenticated' ? (
             <div>
-              {/*friendly dialog */}
-              <p>🤠 Howdy, {localUserName}! Click below to start tracking your expenses or sign out if needed.</p>
-              <button onClick={() => navigate('/track')}>Track</button> {/* goes to expensetracking page */}
-              <button onClick={handleLogout}>Logout</button> {/*logout and reset status*/}
+              <p>Howdy, {localUserName}! Tracking your expense is just a click away!</p>
+              <button onClick={() => navigate('/track')}>Track</button>
+              <button onClick={handleLogout}>Logout</button>
+              {message && <p className="error-message">{message}</p>}
             </div>
           ) : (
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleAuth}>
               <div className="form-group">
                 <label htmlFor="username">Username</label>
                 <input 
@@ -66,7 +101,11 @@ export function Login({ userName, authState, onAuthChange }) {
                 />
               </div>
 
-              <button type="submit">Login</button> {/*logs in and updates state*/}
+              <button type="submit">{isCreateAccount ? 'Create Account' : 'Login'}</button>
+              <button type="button" onClick={() => setIsCreateAccount(!isCreateAccount)}>
+                {isCreateAccount ? 'Already have an account?' : 'Create a new account'}
+              </button>
+              {message && <p className="error-message">{message}</p>}
             </form>
           )}
         </div>
