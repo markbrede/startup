@@ -2,32 +2,49 @@ import React, { useEffect, useState } from 'react';
 import './about.css';
 
 export function About() {
-  const [imageUrl, setImageUrl] = useState('business.jpeg');
   const [quote, setQuote] = useState('Loading...');
   const [quoteAuthor, setQuoteAuthor] = useState('unknown');
+  const [imageUrl, setImageUrl] = useState('');
 
   useEffect(() => {
     const elements = document.querySelectorAll('.fade-in');
     elements.forEach((el, index) => {
       el.style.animationDelay = `${index * 0.1}s`;
     });
-    //Like in Simon, I am setting placeholder values. Later on, I will fetch these from an API
+    
     setImageUrl('warren-buffett.jpeg');
-    setQuote('Price is what you pay; value is what you get');
-    setQuoteAuthor('Warren Buffett');
+    
+    //fetch a quote
+    const fetchQuote = async () => {
+      try {
+        const response = await fetch('/api/quote');
+        if (!response.ok) {
+          throw new Error('Failed to fetch quote');
+        }
+        const data = await response.json();
+        setQuote(data.text);
+        setQuoteAuthor(data.author || 'Unknown');
+      } catch (error) {
+        console.error('Error fetching quote:', error);
+        //if API call fails, I have the backup Buffett quote
+        setQuote('Price is what you pay; value is what you get');
+        setQuoteAuthor('Warren Buffett');
+      }
+    };
+    
+    fetchQuote();
   }, []);
 
   return (
     <div className="about-content">
       <div id="picture" className="picture-box fade-in">
-        <img src={imageUrl} alt="Picture of crazy confident business-men." />
+        <img src={imageUrl} alt="Dramatic Image of Warren Buffet" />
       </div>
 
       <div className="quote-section fade-in">
-        <p className="quote">&ldquo;{quote}&rdquo;</p> {/*google suggested "&ldquo" to add quotation marks*/}
+        <p className="quote">&ldquo;{quote}&rdquo;</p>
         <p className="author"><strong>Author:</strong> {quoteAuthor}</p>
       </div>
-
 
       <h2 className="fade-in">What Makes us Different?</h2>
       <p className="fade-in">
