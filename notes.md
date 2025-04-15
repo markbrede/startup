@@ -139,3 +139,37 @@
 ## Mar 17, 2025 - Testing & Optimizing  
 **Testinf & Debugging** 
 - Used console logs and DevTools to fix issues.
+
+
+## April 15, 2025 - Backend Bootcamp  
+**Building the AutoExpenseTracker Backend**  
+- Used **Express.js** to create API endpoints for expenses and authentication.  
+- Learned to handle cookies for user sessions using **cookie-parser**.  
+- Stored user data *in memory* (temporary – would use a database later).  
+
+**Auth Stuff**  
+- Made `/api/auth/login`, `/api/auth/create`, and `/api/auth/logout` endpoints.  
+- Used **bcryptjs** to hash passwords – never store plain text passwords!  
+- Generated unique auth tokens with **uuid** for secure sessions.  
+- Pro tip: Always set cookies with `httpOnly: true` and `secure: true` in production.  
+
+**Expense API Endpoints**  
+- Created CRUD operations:  
+  - `GET /api/expenses` to fetch your expense history  
+  - `POST /api/expenses` to log new expenses  
+  - `PUT/DELETE` to edit/remove entries  
+- Used middleware to check if users are logged in before letting them access data.  
+
+**Debugging Nightmares**  
+- Fixed the *"Unexpected token ' localStorage** for auth tokens in full-stack apps.  
+3. Use `express.static()` to serve React builds from the backend.  
+4. **Proxy API requests** in Vite to avoid CORS issues during development.  
+5. Console.log() is your best friend for debugging server errors.  
+
+---
+
+## Random Backend Wisdom  
+- "Status codes matter – 401 means *you messed up*, 500 means *I messed up*."  
+- When in doubt, restart the server (`Ctrl+C` then `node index.js`).  
+- Testing APIs with **curl** or Postman > guessing in the browser.  
+- Formatting JSON responses wrong will ruin your whole day.
