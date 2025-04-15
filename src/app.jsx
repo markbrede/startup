@@ -1,13 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import { Login } from './login/login';
 import { Track } from './track/track';
-import { History } from './history/history';
+import { History } from './history/History';
 import { About } from './about/about';
 
 function NotFound() {
   return <h1>404: Page not found</h1>;
+}
+
+//guard routes that require authentication
+function AuthRequired({ children }) {
+  const navigate = useNavigate();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    //api request to check if user is authenticated
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/expenses');
+        if (response.ok) {
+          setIsAuthenticated(true);
+        } else {
+          // redirect to login if not authenticated
+          navigate('/');
+        }
+      } catch (error) {
+        navigate('/');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, [navigate]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  return isAuthenticated ? children : null;
 }
 
 function App() {
@@ -18,13 +52,22 @@ function App() {
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('userName');
-    if (storedUser) {
-      setUserName(storedUser);
-      setAuthState('Authenticated');
-    } else {
-      setAuthState('Unauthenticated');
-    }
+    //check auth status
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/expenses');
+        if (response.ok) {
+          //access expenses endpoint? then authenticated
+          setAuthState('Authenticated');
+        } else {
+          setAuthState('Unauthenticated');
+        }
+      } catch (error) {
+        setAuthState('Unauthenticated');
+      }
+    };
+
+    checkAuth();
   }, []);
 
   return (
@@ -49,8 +92,22 @@ function App() {
           <div className={`main-content ${isLoginPage ? 'transparent' : ''}`}>
             <Routes>
               <Route path="/" element={<Login userName={userName} authState={authState} onAuthChange={(user, state) => { setUserName(user); setAuthState(state); }} />} />
-              <Route path="/track" element={<Track />} />
-              <Route path="/history" element={<History />} />
+              <Route 
+                path="/track" 
+                element={
+                  <AuthRequired>
+                    <Track />
+                  </AuthRequired>
+                } 
+              />
+              <Route 
+                path="/history" 
+                element={
+                  <AuthRequired>
+                    <History />
+                  </AuthRequired>
+                } 
+              />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
