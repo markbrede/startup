@@ -165,20 +165,23 @@ app.delete('/api/expenses/:id', authenticateUser, (req, res) => {
 //using a third party quote api similar to Sim example
 app.get('/api/quote', async (req, res) => {
   try {
-    //testing with zen quotes.
-    const response = await fetch('https://zenquotes.io/api/random'); //may change
+    const response = await fetch('https://zenquotes.io/api/random');
     const quotes = await response.json();
     
-    //random quotes
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const quote = quotes[randomIndex];
+    //zen quotes returns an array with one object
+    const quote = quotes[0];
     
-    res.send(quote);
+    // updating names ot work with client.
+    res.send({
+      text: quote.q,
+      author: quote.a
+    });
   } catch (error) {
     console.error('Error fetching quote:', error);
     res.status(500).send({ msg: 'Failed to fetch quote', error: error.message });
   }
 });
+
 
 //server startup 
 app.listen(port, () => {

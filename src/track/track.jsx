@@ -12,7 +12,6 @@ export function Track() {
   //store submitted expenses
   const [expenses, setExpenses] = useState([]);
   const [message, setMessage] = useState('');
-  const [quote, setQuote] = useState({ text: '', author: '' });
 
   useEffect(() => {
     const elements = document.querySelectorAll('.fade-in');
@@ -36,22 +35,7 @@ export function Track() {
       }
     };    
 
-    //fetch the quote
-    const fetchQuote = async () => {
-      try {
-        const response = await fetch('/api/quote');
-        if (!response.ok) {
-          throw new Error('Failed to fetch the quote');
-        }
-        const data = await response.json();
-        setQuote({ text: data.text, author: data.author || 'Unknown' });
-      } catch (error) {
-        console.error('Error fetching the quote:', error);
-      }
-    };
-
     fetchExpenses();
-    fetchQuote();
   }, []);
 
   //handle submission for the data the users enter
@@ -87,14 +71,6 @@ export function Track() {
   return (
     <div className="track-content">
       <h1 className="track-title fade-in">Track Your Expenses</h1>
-
-      {/* quote */}
-      {quote.text && (
-        <div className="quote-box fade-in">
-          <p>"{quote.text}"</p>
-          <p className="quote-author">— {quote.author}</p>
-        </div>
-      )}
 
       {/* user inputs handled through expense form */}
       <ExpenseForm
