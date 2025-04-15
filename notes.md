@@ -141,7 +141,7 @@
 - Used console logs and DevTools to fix issues.
 
 
-## April 15, 2025 - Backend Bootcamp  
+## April 14, 2025 - 14 hours of web backend
 **Building the AutoExpenseTracker Backend**  
 - Used **Express.js** to create API endpoints for expenses and authentication.  
 - Learned to handle cookies for user sessions using **cookie-parser**.  
