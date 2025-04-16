@@ -14,7 +14,8 @@
     "express": "^5.1.0",
     "cookie-parser": "^1.4.6",
     "bcryptjs": "^2.4.3",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "mongodb": "^5.1.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
