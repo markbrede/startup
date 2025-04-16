@@ -186,14 +186,24 @@ app.get('/api/quote', async (req, res) => {
     const response = await fetch('https://zenquotes.io/api/random');
     const quotes = await response.json();
     
-    //random quotes
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const quote = quotes[randomIndex];
+    if (!Array.isArray(quotes) || quotes.length === 0) {
+      throw new Error('Invalid quote data received from ZenQuotes API');
+    }
     
-    res.send(quote);
+    //zen quotes is returning an array with a single quote object with 'q' for quote text and 'a' for author
+    const quote = quotes[0];
+    
+    //adjusting to expected format
+    res.send({
+      text: quote.q || 'No quote quote could be displayed at this time. But hey, is that Warren Buffet?^^^',
+      author: quote.a || 'Your AutoExpenseTracker Web Devs'
+    });
   } catch (error) {
     console.error('Error fetching quote:', error);
-    res.status(500).send({ msg: 'Failed to fetch quote', error: error.message });
+    res.status(500).send({ 
+      msg: 'Failed to fetch quote', 
+      error: error.message
+    });
   }
 });
 

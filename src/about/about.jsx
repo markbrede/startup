@@ -22,11 +22,16 @@ export function About() {
           throw new Error('Failed to fetch quote');
         }
         const data = await response.json();
-        setQuote(data.text);
-        setQuoteAuthor(data.author || 'Unknown');
+        //verify there is valid data
+        if (data && data.text) {
+          setQuote(data.text);
+          setQuoteAuthor(data.author || 'Unknown');
+        } else {
+          throw new Error('Invalid quote format');
+        }
       } catch (error) {
         console.error('Error fetching quote:', error);
-        //if API call fails, I have the backup Buffett quote
+        //if API fails
         setQuote('Price is what you pay; value is what you get');
         setQuoteAuthor('Warren Buffett');
       }
