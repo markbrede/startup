@@ -61,3 +61,49 @@ async function clearUserAuthToken(username) {
     { $set: { authToken: null } }
   );
 }
+
+//my expense funcs
+async function getUserExpenses(username) {
+  return await expensesCollection.find({ userName: username }).toArray();
+}
+
+async function addExpense(username, expense) {
+  const newExpense = {
+    ...expense,
+    id: uuidv4(),
+    userName: username,
+    date: new Date().toLocaleDateString()
+  };
+  
+  await expensesCollection.insertOne(newExpense);
+  return newExpense;
+}
+
+async function updateExpense(username, expenseId, updates) {
+  await expensesCollection.updateOne(
+    { id: expenseId, userName: username },
+    { $set: updates }
+  );
+  return await expensesCollection.findOne({ id: expenseId, userName: username });
+}
+
+async function deleteExpense(username, expenseId) {
+  const expense = await expensesCollection.findOne({ id: expenseId, userName: username });
+  if (expense) {
+    await expensesCollection.deleteOne({ id: expenseId, userName: username });
+  }
+  return expense;
+}
+
+module.exports = {
+  connectToDatabase,
+  getUser,
+  createUser,
+  updateUserAuthToken,
+  getUserByToken,
+  clearUserAuthToken,
+  getUserExpenses,
+  addExpense,
+  updateExpense,
+  deleteExpense
+};
