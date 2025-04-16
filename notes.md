@@ -166,10 +166,48 @@
 4. **Proxy API requests** in Vite to avoid CORS issues during development.  
 5. Console.log() is your best friend for debugging server errors.  
 
----
-
 ## Random Backend Wisdom  
 - "Status codes matter – 401 means *you messed up*, 500 means *I messed up*."  
 - When in doubt, restart the server (`Ctrl+C` then `node index.js`).  
 - Testing APIs with **curl** or Postman > guessing in the browser.  
 - Formatting JSON responses wrong will ruin your whole day.
+
+---
+
+## April 15, 2025 - MongoDB & Database Integration
+**Adding MongoDB to AutoExpenseTracker**
+- Set up mongo atlas account and created a new database cluster
+- Created dbconfig to store MongoDB credentials (added to .gitignore!)
+- Connected my Express server to MongoDB using mongoose
+
+**From Memory to MongoDB**
+- Converted in memory expense storage to MongoDB collections
+- Created schemas for users and expenses
+- Modified API endpoints to use MongoDB operations instead of arrays
+- Learned that async/await makes database operations much cleaner
+
+**Authentication Improvements**
+- Moved user credentials from memory to MongoDB
+- Hashed passwords before storing them (still using bcrypt)
+- Added proper session management with cookies
+- Created middleware to check user permissions
+
+**Deployment Challenges**
+- Used deployService.sh script to deploy to production
+- Had to troubleshoot connection strings and environment variables
+- Made sure dbconfigwas properly configured on the server
+- Tested everything thoroughly to ensure it works in production
+
+**Debugging Database Issues**
+- Used VS Code's Node.js debugger to step through backend code
+- Set breakpoints to understand the flow of data
+- Console.logged MongoDB queries to check what's happening
+- Learned that most database issues come from incorrect schemas or query syntax
+
+**My Key Takeaways**
+- MongoDB is perfect for storing JSON like data from JavaScript
+- Always validate user input before sending it to the database
+- Database connections need proper error handling
+- Remember to close connections when they're not needed
+- Never store sensitive info (like MongoDB credentials) in your Git repo[1]
+
