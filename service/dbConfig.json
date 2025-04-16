@@ -1,6 +1,5 @@
 {
-    "hostname": "cluster0.yourmongodb.mongodb.net",
-    "username": "yourMongoDBUsername",
-    "password": "yourMongoDBPassword"
-  }
-  
+  "hostname": "cluster0.vdyuhue.mongodb.net",
+  "username": "markjacob",
+  "password": "77JViLkhxUrvzYHE"
+} 
