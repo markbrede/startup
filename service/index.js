@@ -3,6 +3,8 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const app = express();
 const db = require('./database');
+const { expenseUpdates, expenseUpdates } = require('./expenseUpdates');
+const http = require('http');
 
 app.use(express.static('public'));
 app.use(express.json()); //json and cookie middleware
@@ -15,6 +17,10 @@ const cookieOptions = {
   secure: process.env.NODE_ENV === 'production', 
   sameSite: 'strict' 
 };
+
+const httpServer = http.createServer(app); //http server
+
+const expenseUpdates = new expenseUpdates(httpServer);
 
 //server starts, connect to mongo
 (async () => {

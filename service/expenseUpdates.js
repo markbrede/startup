@@ -1,7 +1,7 @@
 const { WebSocketServer } = require('ws');
 
 //handle WebSocket connections and send update messages between users on the same account
-class PeerProxy {
+class expenseUpdates {
   constructor(httpServer) {
     //make a websoc server that shares the http server
     this.wss = new WebSocketServer({ noServer: true });
@@ -54,4 +54,4 @@ class PeerProxy {
   }
 }
 
-module.exports = { PeerProxy };
+module.exports = { expenseUpdates };
