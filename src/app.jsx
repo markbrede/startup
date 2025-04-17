@@ -5,6 +5,7 @@ import { Login } from './login/login';
 import { Track } from './track/track';
 import { History } from './history/History';
 import { About } from './about/about';
+import { ExpenseNotifier } from './ExpenseNotifier';
 
 function NotFound() {
   return <h1>404: Page not found</h1>;
@@ -59,6 +60,18 @@ function App() {
         if (response.ok) {
           //access expenses endpoint? then authenticated
           setAuthState('Authenticated');
+
+          // fetch user info if authenticated
+          try {
+            const userResponse = await fetch('/api/auth/me');
+            if (userResponse.ok) {
+              const userData = await userResponse.json();
+              setUserName(userData.userName);
+            }
+          } catch (userError) {
+            console.error('Error fetching user info:', userError);
+          }
+
         } else {
           setAuthState('Unauthenticated');
         }
@@ -96,7 +109,7 @@ function App() {
                 path="/track" 
                 element={
                   <AuthRequired>
-                    <Track />
+                    <Track userName={userName} />
                   </AuthRequired>
                 } 
               />
@@ -104,7 +117,7 @@ function App() {
                 path="/history" 
                 element={
                   <AuthRequired>
-                    <History />
+                    <History userName={userName} />
                   </AuthRequired>
                 } 
               />
@@ -118,6 +131,8 @@ function App() {
           <p>Mark Brede</p>
           <a href="https://github.com/markbrede/startup/tree/main">GitHub</a>
         </footer>
+
+        {authState === 'Authenticated' && <ExpenseNotifier />}
       </div>
     </div>
   );
