@@ -226,7 +226,7 @@ app.get('/api/auth/me', authenticateUser, async (req, res) => {
 
 
 //server startup 
-app.listen(port, () => {
+httpServer.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 

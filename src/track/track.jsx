@@ -5,7 +5,7 @@ import { ExpenseList } from './ExpenseList';
 import { ExpenseChart } from './ExpenseChart';
 import { notifyExpense } from '../ExpenseNotifier';
 
-export function Track() {
+export function Track({ userName }) {
   //keep user input
   const [vehicle, setVehicle] = useState('');
   const [expenseType, setExpenseType] = useState('');
@@ -61,7 +61,7 @@ export function Track() {
       setExpenses([...expenses, newExpense]);
 
       //send websocket notification
-      notifyExpense(newExpense, null, 'add'); //username is null for now
+      notifyExpense(newExpense, userName, 'add'); //username is null for now
       
       //clear
       setVehicle('');
