@@ -211,3 +211,53 @@
 - Remember to close connections when they're not needed
 - Never store sensitive info (like MongoDB credentials) in your Git repo[1]
 
+## April 16, 2025 – WebSockets for Real-Time Expense Notifications
+
+**Getting Real-Time with WebSockets**
+- Decided to add **WebSocket notifications** so that when a user adds or deletes an expense, all their open browser tabs update instantly.
+- Used the **ws** library in Node.js to create a WebSocket server that shares the same HTTP server as Express.
+- Learned that you must use the *same* HTTP server instance for both Express and WebSocket upgrades. (If you call `app.listen()`, the WebSocket server won’t work – use `httpServer.listen()` instead!)
+- The WebSocket server listens for HTTP upgrade requests and then switches the protocol to WebSocket for real-time communication.
+
+**Frontend WebSocket Integration**
+- Created a singleton WebSocket connection in `ExpenseNotifier.jsx` so only one connection is open per client.
+- When an expense is added or deleted, the frontend calls `notifyExpense()` to send a message to the WebSocket server.
+- All connected clients receive the update and display a notification using React state.
+- Used a global array of event handlers so other components can react to incoming WebSocket messages.
+
+**Broadcasting Events**
+- The backend’s `ExpenseUpdates` class keeps track of all active WebSocket connections.
+- When a client sends a message, the server forwards it to all other clients (except the sender).
+- Added a ping interval to keep connections alive and detect dead sockets.
+
+**How I Fixed the Username Issue**
+- At first, notifications showed `null` for the user’s name. This happened because the username wasn’t being passed to `notifyExpense()` in `Track.jsx` and `History.jsx`.
+- Fixed it by passing the `userName` prop from the parent (`App.jsx`) down to `Track` and `History`, and then into `notifyExpense()`.
+- Now, when a user adds or deletes an expense, their username is included in the WebSocket message and shows up in the notification.
+
+**WebSocket Message Format**
+- Each message sent over the WebSocket has:
+  - `type`: e.g., `"expense"`
+  - `userName`: the name of the user who triggered the event
+  - `message`: a human-readable description (e.g., "added a new Fuel expense of $50 for their Honda Civic")
+  - `data`: the expense object itself
+
+**Frontend Notification UX**
+- Notifications fade in and out automatically after 5 seconds.
+- Each notification shows the username, time, and message.
+- Clicking a notification removes it immediately.
+
+**Key Lessons Learned**
+- **WebSocket servers must share the HTTP server instance** with Express for upgrade requests to work.
+- Always pass all required data (like `userName`) through your notification functions, or you’ll get `null` in your UI.
+- Use a single WebSocket connection per client, and clean up event listeners to avoid memory leaks.
+- WebSockets are perfect for real-time features like notifications, but debugging connection issues can be tricky—watch for `ECONNRESET` errors if your server setup is wrong.
+- Keeping your message format consistent makes it easy to handle notifications on the frontend.
+
+**Next Steps**
+- Might add authentication to the WebSocket handshake so only logged-in users can connect.
+- Could expand notifications to include edits/updates, not just adds and deletes.
+- Considered adding a reconnection strategy for dropped WebSocket connections.
+
+**My WebSocket takeaway:**  
+Getting real-time notifications working means wiring up both backend and frontend carefully—especially making sure the right data (like usernames) gets sent and received. Debugging server upgrades and connection issues taught me a lot about how HTTP and WebSockets interact under the hood.
