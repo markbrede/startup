@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './history.css';
+import { notifyExpense } from '../ExpenseNotifier';
 
-export function History() {
+export function History({ userName }) {
   const [expenses, setExpenses] = useState([]);
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
@@ -41,12 +42,20 @@ export function History() {
     }
 
     try {
+      //find the expense to be deleted for the notification
+      const expenseToDelete = expenses.find(expense => expense.id === id);
+
       const response = await fetch(`/api/expenses/${id}`, {
         method: 'DELETE',
       });
 
       if (!response.ok) {
         throw new Error('failde to delete expense');
+      }
+
+      //deleted expense web soc notification
+      if (expenseToDelete) {
+        notifyExpense(expenseToDelete, userName, 'delete');
       }
 
       //if the successful, update
