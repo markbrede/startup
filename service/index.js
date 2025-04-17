@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
 const app = express();
 const db = require('./database');
-const { expenseUpdates, expenseUpdates } = require('./expenseUpdates');
+const { ExpenseUpdates } = require('./expenseUpdates');
 const http = require('http');
 
 app.use(express.static('public'));
@@ -20,7 +20,7 @@ const cookieOptions = {
 
 const httpServer = http.createServer(app); //http server
 
-const expenseUpdates = new expenseUpdates(httpServer);
+const expenseProxy = new ExpenseUpdates(httpServer);
 
 //server starts, connect to mongo
 (async () => {
