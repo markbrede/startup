@@ -3,7 +3,7 @@ import { NavLink, Route, Routes, useLocation, useNavigate } from 'react-router-d
 import './App.css';
 import { Login } from './login/login';
 import { Track } from './track/track';
-import { History } from './history/History';
+import { History } from './history/history';
 import { About } from './about/about';
 import { ExpenseNotifier } from './ExpenseNotifier';
 

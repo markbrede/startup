@@ -213,6 +213,18 @@ app.get('/api/quote', async (req, res) => {
   }
 });
 
+//for websoc. new end point that can get current info 
+app.get('/api/auth/me', authenticateUser, async (req, res) => {
+  try {
+    const user = req.user;
+    res.send({ userName: user.userName });
+  } catch (error) {
+    console.error('Error fetching user info:', error);
+    res.status(500).send({ msg: 'Error fetching user info' });
+  }
+});
+
+
 //server startup 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
