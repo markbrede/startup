@@ -3,6 +3,7 @@ import './track.css';
 import { ExpenseForm } from './ExpenseForm';
 import { ExpenseList } from './ExpenseList';
 import { ExpenseChart } from './ExpenseChart';
+import { notifyExpense } from '../ExpenseNotifier';
 
 export function Track() {
   //keep user input
@@ -58,6 +59,9 @@ export function Track() {
       
       const newExpense = await response.json();
       setExpenses([...expenses, newExpense]);
+
+      //send websocket notification
+      notifyExpense(newExpense, null, 'add'); //username is null for now
       
       //clear
       setVehicle('');
